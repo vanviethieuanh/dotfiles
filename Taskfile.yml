@@ -1,6 +1,6 @@
 # https://taskfile.dev
 
-version: '3'
+version: "3"
 
 vars:
   GREETING: Hello, World!
@@ -12,6 +12,7 @@ tasks:
     silent: true
 
   link:
+    desc: Create symbolic links from repo to actually config location
     cmds:
       - chmod +x ./scripts/link.sh
       - ./scripts/link.sh
