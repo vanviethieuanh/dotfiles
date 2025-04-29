@@ -7,30 +7,17 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- NOTE: Neo Vim native configs
 require 'settings'
 require 'remap'
 require 'commands'
+
+-- NOTE: Lazy installation and setup
+-- It's required to setup plugins commands under this require.
 require 'plugins-manager'
 
--- NOTE: Terraform
-vim.cmd [[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]]
-vim.cmd [[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]]
-vim.cmd [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
-vim.cmd [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
-vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
-vim.cmd [[let g:terraform_fmt_on_save=1]]
-vim.cmd [[let g:terraform_align=1]]
-
--- vim.keymap('n', '<leader>ti', ':!terraform init<CR>')
--- vim.keymap('n', '<leader>tv', ':!terraform validate<CR>')
--- vim.keymap('n', '<leader>tp', ':!terraform plan<CR>')
-
-require('lspconfig').terraformls.setup {
-  -- indexing = {
-  --   ignorePaths = [".terraform", "*.tfstate", "*.tfstate.*"],
-  -- }
-}
-require('lspconfig').tflint.setup {}
+-- NOTE: LSP configs imports
+require 'lsp-config.terraform'
 
 -- NOTE: breadcrumbs
 require('nvim-navic').setup {

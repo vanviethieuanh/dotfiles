@@ -6,10 +6,10 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- NOTE: Commands
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-vim.keymap.set('n', '<leader>w', vim.cmd.bd, { desc = '[W]uit current buffer' })
+vim.keymap.set('n', '<leader>q', vim.cmd.bd, { desc = '[Q]uit current buffer' })
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open file [E]xplorer' })
-
+vim.keymap.set('n', '<leader>Q', vim.cmd.qa, { desc = '[Q]uits all buffers except those that have unsaved work' })
+vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite current buffer' })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
