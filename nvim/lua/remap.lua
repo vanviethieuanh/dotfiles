@@ -7,9 +7,12 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- NOTE: Commands
 vim.keymap.set('n', '<leader>q', vim.cmd.bd, { desc = '[Q]uit current buffer' })
-vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open file [E]xplorer' })
 vim.keymap.set('n', '<leader>Q', vim.cmd.qa, { desc = '[Q]uits all buffers except those that have unsaved work' })
+vim.keymap.set('n', '<leader>e', ':Neotree position=current<CR>', { desc = 'Open file [E]xplorer' })
 vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite current buffer' })
+
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndo tree' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -38,3 +41,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')

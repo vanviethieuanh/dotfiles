@@ -9,13 +9,16 @@
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require('lazy').setup({
+require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: symbols path
   'SmiteshP/nvim-navic',
   'LunarVim/breadcrumbs.nvim',
+  'mbbill/undotree',
+  'sindrets/diffview.nvim',
+  'tpope/vim-fugitive',
 
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.telescope', -- Search
@@ -35,7 +38,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',
-}, {
+
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -55,4 +58,4 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
-})
+}
