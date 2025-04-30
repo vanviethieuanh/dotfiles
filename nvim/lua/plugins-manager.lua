@@ -20,7 +20,7 @@ require('lazy').setup {
 
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.telescope', -- Search
-  require 'plugins.git', -- Sign for git changes
+  require 'plugins.git', -- Git related configurations
   require 'plugins.which-key', -- Show shortcuts on pressing
   require 'plugins.neo-tree', -- Dir tree
   require 'plugins.conform', -- Formatter
