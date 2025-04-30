@@ -17,12 +17,10 @@ require('lazy').setup {
   'SmiteshP/nvim-navic',
   'LunarVim/breadcrumbs.nvim',
   'mbbill/undotree',
-  'sindrets/diffview.nvim',
-  'tpope/vim-fugitive',
 
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.telescope', -- Search
-  require 'plugins.gitsigns', -- Sign for git changes
+  require 'plugins.git', -- Sign for git changes
   require 'plugins.which-key', -- Show shortcuts on pressing
   require 'plugins.neo-tree', -- Dir tree
   require 'plugins.conform', -- Formatter
