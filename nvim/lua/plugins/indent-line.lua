@@ -5,5 +5,6 @@ return {
   ---@type ibl.config
   opts = {
     indent = { char = '▏' },
+    exclude = { filetypes = { 'terminal', 'dashboard' } },
   },
 }
