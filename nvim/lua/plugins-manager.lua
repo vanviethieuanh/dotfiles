@@ -33,6 +33,7 @@ require('lazy').setup {
   require 'plugins.todo-comments', -- This highlight todo and notes.
   require 'plugins.lint', -- Linter
   require 'plugins.auto-session', -- Session manager
+  require 'plugins.indent-line',
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',
