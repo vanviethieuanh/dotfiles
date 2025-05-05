@@ -10,5 +10,11 @@ return {
   lazy = false, -- neo-tree will lazily load itself
   ---@module "neo-tree"
   ---@type neotree.Config?
-  opts = {},
+  opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true,
+      },
+    },
+  },
 }
