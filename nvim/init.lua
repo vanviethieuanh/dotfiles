@@ -51,6 +51,9 @@ require('nvim-navic').setup {
   },
   lsp = {
     auto_attach = true,
+    preference = { 'basedpyright', 'pyright' }, -- prefer basedpyright over pyright
   },
 }
 require('breadcrumbs').setup {}
+
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
