@@ -6,8 +6,8 @@ return {
       options = {
         icons_enabled = true,
         theme = 'gruvbox',
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = ' ' },
+        component_separator = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = {},
           winbar = {},
@@ -24,11 +24,46 @@ return {
       },
 
       sections = {
-        lualine_a = { 'mode' },
+        lualine_a = {
+
+          {
+            'mode',
+            fmt = function(str)
+              return '▊ ' .. str:sub(1, 1)
+            end,
+            color = function()
+              -- auto change color according to neovims mode
+              local mode_color = {
+                n = 'fg',
+                i = 'green',
+                v = 'blue',
+                [''] = 'blue',
+                V = 'blue',
+                c = 'magenta',
+                no = 'red',
+                s = 'orange',
+                S = 'orange',
+                [''] = 'orange',
+                ic = 'yellow',
+                R = 'violet',
+                Rv = 'violet',
+                cv = 'red',
+                ce = 'red',
+                r = 'cyan',
+                rm = 'cyan',
+                ['r?'] = 'cyan',
+                ['!'] = 'red',
+                t = 'red',
+              }
+              return { fg = mode_color[vim.fn.mode()], bg = 'bg' }
+            end,
+          },
+        },
         lualine_b = {
           {
             'branch',
             icon = '󰊢',
+            color = { fg = 'fg', bg = 'bg' },
           },
           { 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' } },
           {
