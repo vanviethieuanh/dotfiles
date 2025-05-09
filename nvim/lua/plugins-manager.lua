@@ -14,7 +14,6 @@ require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: symbols path
-  'SmiteshP/nvim-navic',
   'LunarVim/breadcrumbs.nvim',
   'mbbill/undotree',
   'dstein64/vim-startuptime',
@@ -36,6 +35,7 @@ require('lazy').setup {
   require 'plugins.auto-session', -- Session manager
   require 'plugins.indent-line',
   require 'plugins.lualine',
+  require 'plugins.navic',
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',
