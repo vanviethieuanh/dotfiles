@@ -17,6 +17,7 @@ require('lazy').setup {
   'SmiteshP/nvim-navic',
   'LunarVim/breadcrumbs.nvim',
   'mbbill/undotree',
+  'dstein64/vim-startuptime',
 
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.telescope', -- Search
@@ -34,6 +35,7 @@ require('lazy').setup {
   require 'plugins.lint', -- Linter
   require 'plugins.auto-session', -- Session manager
   require 'plugins.indent-line',
+  require 'plugins.lualine',
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',

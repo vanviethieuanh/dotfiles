@@ -78,7 +78,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
     vim.keymap.set('n', '<leader>p', builtin.lsp_document_symbols, { desc = '[P]references' })
-    vim.keymap.set('n', '<leader>o', builtin.git_files, { desc = '[O]pen files in current repo.' })
+    vim.keymap.set('n', '<leader>o', builtin.find_files, { desc = '[O]pen files in current repo.' })
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
