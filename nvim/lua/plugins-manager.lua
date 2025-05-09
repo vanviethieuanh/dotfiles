@@ -34,8 +34,9 @@ require('lazy').setup {
   require 'plugins.lint', -- Linter
   require 'plugins.auto-session', -- Session manager
   require 'plugins.indent-line',
-  require 'plugins.lualine',
   require 'plugins.navic',
+  require 'plugins.lualine',
+
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',

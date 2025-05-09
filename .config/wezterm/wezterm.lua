@@ -1,12 +1,20 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local constants = require("constants")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 -- NOTE: Font settings
-config.font_size = 16
+--
+if wezterm.target_triple == "aarch64-apple-darwin" then
+	config.font_size = 16 -- macOS Apple Silicon
+elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+	config.font_size = 12 -- Linux
+else
+	config.font_size = 14 -- Fallback/default
+end
 config.line_height = 1.2
 config.font = wezterm.font("RobotoMono Nerd Font")
 
@@ -19,9 +27,10 @@ config.colors = {
 -- NOTE: Appearance
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
+config.window_background_image = constants.bg_image
 
 -- For example, changing the color scheme:
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Nord (base16)"
 
 -- and finally, return the configuration to wezterm
 return config
