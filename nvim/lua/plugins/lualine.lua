@@ -2,10 +2,15 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
+    local function get_fg(group)
+      local hl = vim.api.nvim_get_hl(0, { name = group })
+      return hl and hl.fg and string.format('#%06x', hl.fg)
+    end
+
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = 'gruvbox',
+        theme = 'gruvbox-material',
         component_separator = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -25,7 +30,6 @@ return {
 
       sections = {
         lualine_a = {
-
           {
             'mode',
             fmt = function(str)
@@ -35,25 +39,25 @@ return {
               -- auto change color according to neovims mode
               local mode_color = {
                 n = 'fg',
-                i = 'green',
-                v = 'blue',
-                [''] = 'blue',
-                V = 'blue',
-                c = 'magenta',
-                no = 'red',
-                s = 'orange',
-                S = 'orange',
-                [''] = 'orange',
-                ic = 'yellow',
-                R = 'violet',
-                Rv = 'violet',
-                cv = 'red',
-                ce = 'red',
-                r = 'cyan',
-                rm = 'cyan',
-                ['r?'] = 'cyan',
-                ['!'] = 'red',
-                t = 'red',
+                i = get_fg 'green',
+                v = get_fg 'blue',
+                [''] = get_fg 'blue',
+                V = get_fg 'blue',
+                c = get_fg 'yellow',
+                no = get_fg 'red',
+                s = get_fg 'orange',
+                S = get_fg 'orange',
+                [''] = get_fg 'orange',
+                ic = get_fg 'yellow',
+                R = get_fg 'violet',
+                Rv = get_fg 'violet',
+                cv = get_fg 'red',
+                ce = get_fg 'red',
+                r = get_fg 'cyan',
+                rm = get_fg 'cyan',
+                ['r?'] = get_fg 'cyan',
+                ['!'] = get_fg 'red',
+                t = get_fg 'red',
               }
               return { fg = mode_color[vim.fn.mode()], bg = 'bg' }
             end,
