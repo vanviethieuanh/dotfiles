@@ -75,7 +75,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader><leader>', builtin.live_grep, { desc = '[ ] Find existing buffers' })
 
     vim.keymap.set('n', '<leader>p', builtin.lsp_document_symbols, { desc = '[P]references' })
     vim.keymap.set('n', '<leader>o', builtin.find_files, { desc = '[O]pen files in current repo.' })
