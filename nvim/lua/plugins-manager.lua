@@ -14,7 +14,6 @@ require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: symbols path
-  'LunarVim/breadcrumbs.nvim',
   'mbbill/undotree',
   'dstein64/vim-startuptime',
 
