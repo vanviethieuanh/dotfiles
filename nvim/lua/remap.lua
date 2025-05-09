@@ -47,3 +47,6 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
+
+vim.keymap.set('v', '<leader>a', 'ggVG')
+vim.keymap.set('n', '<leader>a', 'ggVG')
