@@ -43,5 +43,7 @@ config.window_padding = {
 
 require("tab-title").setup(theme_colors)
 
+wezterm.on("window-resized", utils.center_content)
+wezterm.on("window-config-reloaded", utils.center_content)
 -- and finally, return the configuration to wezterm
 return config
