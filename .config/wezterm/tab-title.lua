@@ -19,7 +19,7 @@ local function tab_title(tab_info)
 end
 
 function M.setup(theme_colors)
-	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 		local edge_background = "black"
 
 		local background = theme_colors.cursor_fg or "#1b1032"
