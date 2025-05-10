@@ -27,7 +27,14 @@ config.colors = {
 -- NOTE: Appearance
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
 config.window_background_image = constants.bg_image
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
 
 -- For example, changing the color scheme:
 config.color_scheme = "Nord (base16)"
