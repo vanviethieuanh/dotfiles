@@ -34,16 +34,11 @@ config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.window_background_image = constants.bg_image
-config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
-}
 
 require("tab-title").setup(theme_colors)
 
 wezterm.on("window-resized", utils.center_content)
 wezterm.on("window-config-reloaded", utils.center_content)
+
 -- and finally, return the configuration to wezterm
 return config

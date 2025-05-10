@@ -10,19 +10,22 @@ function M.get_theme_colors(scheme_name)
 	return colors
 end
 
-function M.center_content(window, pane)
-	local win_dim = window:get_dimensions()
-	local tab_dim = pane:tab():get_size()
+function M.center_content(window, _)
 	local overrides = window:get_config_overrides() or {}
-	local padding_left = (win_dim.pixel_width - tab_dim.pixel_width) / 2
-	local padding_top = (win_dim.pixel_height - tab_dim.pixel_height) / 2
+
+	local tabsz = window:active_tab():get_size()
+	local cellheight = tabsz.pixel_height / tabsz.rows
+
+	local window_height = window:get_dimensions().pixel_height
+	local pane_height = math.floor(window_height / cellheight) * cellheight
+
 	local new_padding = {
-		left = padding_left,
+		left = 0,
 		right = 0,
-		top = padding_top,
+		top = (window_height - pane_height) / 2,
 		bottom = 0,
 	}
-	if overrides.window_padding and new_padding.left == overrides.window_padding.left then
+	if overrides.window_padding and new_padding.top == overrides.window_padding.top then
 		return
 	end
 	overrides.window_padding = new_padding
