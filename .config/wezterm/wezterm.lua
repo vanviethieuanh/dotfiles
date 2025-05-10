@@ -1,9 +1,17 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+
 local constants = require("constants")
+local utils = require("utils")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+
+-- NOTE: Color Scheme
+local selected_color_scheme = "Gruvbox dark, hard (base16)"
+
+local theme_colors = utils.get_theme_colors(selected_color_scheme)
+config.color_scheme = selected_color_scheme
 
 -- This is where you actually apply your config choices
 -- NOTE: Font settings
@@ -19,10 +27,7 @@ config.line_height = 1.2
 config.font = wezterm.font("RobotoMono Nerd Font")
 
 -- NOTE: Colors
-config.colors = {
-	cursor_bg = "white",
-	cursor_border = "white",
-}
+config.colors = {}
 
 -- NOTE: Appearance
 config.window_decorations = "RESIZE"
@@ -36,8 +41,7 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- For example, changing the color scheme:
-config.color_scheme = "Nord (base16)"
+require("tab-title").setup(theme_colors)
 
 -- and finally, return the configuration to wezterm
 return config
