@@ -19,6 +19,7 @@ config.color_scheme = selected_color_scheme
 if wezterm.target_triple == "aarch64-apple-darwin" then
 	config.font_size = 16 -- macOS Apple Silicon
 elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+	config.window_decorations = "RESIZE"
 	config.font_size = 12 -- Linux
 else
 	config.font_size = 14 -- Fallback/default
@@ -30,7 +31,6 @@ config.font = wezterm.font("RobotoMono Nerd Font")
 config.colors = {}
 
 -- NOTE: Appearance
-config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
 config.window_background_image = constants.bg_image
