@@ -6,6 +6,7 @@ local utils = require("utils")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+config.keys = {}
 
 -- NOTE: Color Scheme
 local selected_color_scheme = "Gruvbox dark, hard (base16)"
@@ -40,5 +41,14 @@ require("tab-title").setup(theme_colors)
 wezterm.on("window-resized", utils.center_content)
 wezterm.on("window-config-reloaded", utils.center_content)
 
--- and finally, return the configuration to wezterm
+-- NOTE: Key binding
+if wezterm.target_triple == "aarch64-apple-darwin" then
+-- macOS-specific bindings can go here
+elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+	local linux_keys = require("key-binding").Linux
+	for _, key in ipairs(linux_keys) do
+		table.insert(config.keys, key)
+	end
+end
+
 return config
