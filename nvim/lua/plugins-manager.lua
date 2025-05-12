@@ -35,7 +35,7 @@ require('lazy').setup {
   require 'plugins.indent-line',
   require 'plugins.navic',
   require 'plugins.lualine',
-
+  require 'plugins.noice',
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',
