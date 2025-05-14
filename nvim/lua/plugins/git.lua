@@ -1,5 +1,75 @@
 return {
-  { 'tpope/vim-fugitive' },
+  -- NOTE: Base: git wrapper
+  {
+    'tpope/vim-fugitive',
+
+    config = function()
+      vim.keymap.set('n', '<leader>ha', ':Gwrite<CR>', { desc = 'Git [a]dd current buffer' })
+      vim.keymap.set('n', '<leader>hA', ':Git add .<CR>', { desc = 'Git add [A]ll' })
+      vim.keymap.set('n', '<leader>hc', ':Git commit<CR>', { desc = 'Git [c]ommit' })
+      vim.keymap.set('n', '<leader>hP', ':Git push<CR>', { desc = 'Git [P]ush' })
+    end,
+  },
+
+  -- NOTE: Git graph
+  -- It required to install wezterm with glyphs, see commit:
+  -- https://github.com/wezterm/wezterm/pull/6873
+  {
+    'isakbm/gitgraph.nvim',
+    opts = {
+      symbols = {
+        merge_commit = '',
+        commit = '',
+        merge_commit_end = '',
+        commit_end = '',
+
+        -- Advanced symbols
+        GVER = '',
+        GHOR = '',
+        GCLD = '',
+        GCRD = '╭',
+        GCLU = '',
+        GCRU = '',
+        GLRU = '',
+        GLRD = '',
+        GLUD = '',
+        GRUD = '',
+        GFORKU = '',
+        GFORKD = '',
+        GRUDCD = '',
+        GRUDCU = '',
+        GLUDCD = '',
+        GLUDCU = '',
+        GLRDCL = '',
+        GLRDCR = '',
+        GLRUCL = '',
+        GLRUCR = '',
+      },
+      format = {
+        timestamp = '%H:%M:%S %d-%m-%Y',
+        fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
+      },
+      hooks = {
+        on_select_commit = function(commit)
+          print('selected commit:', commit.hash)
+        end,
+        on_select_range_commit = function(from, to)
+          print('selected range:', from.hash, to.hash)
+        end,
+      },
+    },
+    keys = {
+      {
+        '<leader>hG',
+        function()
+          require('gitgraph').draw({}, { all = true, max_count = 5000 })
+        end,
+        desc = 'Git - [G]raph - Repo',
+      },
+    },
+  },
+
+  -- NOTE: Diff view
   {
     'sindrets/diffview.nvim',
     config = function()
@@ -9,7 +79,9 @@ return {
     end,
   },
 
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  -- NOTE: Custom git signs, shortcuts for git related like blame, etc ...
+  -- Adds git related signs to the gutter, as well as utilities for managing changes.
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       on_attach = function(bufnr)

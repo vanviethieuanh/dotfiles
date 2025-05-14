@@ -17,6 +17,7 @@ require('lazy').setup {
   'mbbill/undotree',
   'dstein64/vim-startuptime',
 
+  require 'plugins.bigfile',
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.telescope', -- Search
   require 'plugins.git', -- Git related configurations
@@ -37,6 +38,7 @@ require('lazy').setup {
   require 'plugins.lualine',
   require 'plugins.noice',
   require 'plugins.suda',
+
 
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
