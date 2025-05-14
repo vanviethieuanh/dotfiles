@@ -21,7 +21,7 @@ config.color_scheme = selected_color_scheme
 -- NOTE: Font settings
 --
 if wezterm.target_triple == "aarch64-apple-darwin" then
-	config.font_size = 16 -- macOS Apple Silicon
+	config.font_size = 14 -- macOS Apple Silicon
 elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
 	config.window_decorations = "RESIZE"
 	config.font_size = 12 -- Linux
