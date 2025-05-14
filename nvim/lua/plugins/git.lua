@@ -1,5 +1,29 @@
 return {
-  { 'tpope/vim-fugitive' },
+  -- NOTE: Base: git wrapper
+  {
+    'tpope/vim-fugitive',
+
+    config = function()
+      -- Map <leader>ha to :Gwrite (add current buffer)
+      vim.keymap.set('n', '<leader>ha', ':Gwrite<CR>', { desc = 'Git [a]dd current buffer' })
+      -- Map <leader>hA to :Git add . (add all changes)
+      vim.keymap.set('n', '<leader>hA', ':Git add .<CR>', { desc = 'Git add [A]ll' })
+
+      vim.keymap.set('n', '<leader>hc', ':Git commit<CR>', { desc = 'Git [c]ommit' })
+    end,
+  },
+
+  -- NOTE: Git graph
+  {
+    'rbong/vim-flog',
+    lazy = true,
+    cmd = { 'Flog', 'Flogsplit', 'Floggit' },
+    dependencies = {
+      'tpope/vim-fugitive',
+    },
+  },
+
+  -- NOTE: Diff view
   {
     'sindrets/diffview.nvim',
     config = function()
@@ -9,7 +33,9 @@ return {
     end,
   },
 
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  -- NOTE: Custom git signs, shortcuts for git related like blame, etc ...
+  -- Adds git related signs to the gutter, as well as utilities for managing changes.
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       on_attach = function(bufnr)
