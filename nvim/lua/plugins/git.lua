@@ -4,13 +4,9 @@ return {
     'tpope/vim-fugitive',
 
     config = function()
-      -- Map <leader>ha to :Gwrite (add current buffer)
       vim.keymap.set('n', '<leader>ha', ':Gwrite<CR>', { desc = 'Git [a]dd current buffer' })
-      -- Map <leader>hA to :Git add . (add all changes)
       vim.keymap.set('n', '<leader>hA', ':Git add .<CR>', { desc = 'Git add [A]ll' })
-
       vim.keymap.set('n', '<leader>hc', ':Git commit<CR>', { desc = 'Git [c]ommit' })
-
       vim.keymap.set('n', '<leader>hP', ':Git push<CR>', { desc = 'Git [P]ush' })
     end,
   },
