@@ -39,7 +39,6 @@ require('lazy').setup {
   require 'plugins.noice',
   require 'plugins.suda',
 
-
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.autopairs',
