@@ -16,7 +16,4 @@ require 'commands'
 -- It's required to setup plugins commands under this require.
 require 'plugins-manager'
 
--- NOTE: LSP configs imports
-require 'lsp-config.terraform'
-
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
