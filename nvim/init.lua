@@ -11,6 +11,7 @@ vim.g.have_nerd_font = true
 require 'settings'
 require 'remap'
 require 'commands'
+require 'autocmd'
 
 -- NOTE: Lazy installation and setup
 -- It's required to setup plugins commands under this require.
