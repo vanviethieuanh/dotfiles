@@ -37,7 +37,7 @@ config.colors = {}
 -- NOTE: Appearance
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = false
-config.window_background_image = constants.bg_image
+-- config.window_background_image = constants.bg_image
 config.tab_max_width = 64
 
 require("tab-title").setup(theme_colors)
