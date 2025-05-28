@@ -45,6 +45,9 @@ return {
     --    That is to say, every time a new file is opened that is associated with
     --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
     --    function will be executed to configure the current buffer
+    --
+    local util = require 'lspconfig.util'
+
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
@@ -57,7 +60,6 @@ return {
           mode = mode or 'n'
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
         end
-
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -266,5 +268,11 @@ return {
         end,
       },
     }
+
+    -- NOTE: Terraform
+    require('lspconfig').terraformls.setup {
+      root_dir = util.root_pattern('.terraform', '.git', 'provider.tf'),
+    }
+    require('lspconfig').tflint.setup {}
   end,
 }
