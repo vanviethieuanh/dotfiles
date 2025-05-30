@@ -44,6 +44,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', '//', function()
+  local esc = vim.fn.escape
+  local text = esc(vim.fn.getreg 'v', "\\/.*'$^~[]")
+  vim.cmd 'normal! gv'
+  vim.cmd('/\\V' .. text)
+end, { noremap = true, silent = true })
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')

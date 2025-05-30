@@ -16,6 +16,8 @@ require('lazy').setup {
   -- NOTE: symbols path
   'mbbill/undotree',
   'dstein64/vim-startuptime',
+  'arthurxavierx/vim-caser',
+  'hashivim/vim-terraform',
 
   require 'plugins.bigfile',
   require 'lsp-config', -- MAIN LSP config plugin
