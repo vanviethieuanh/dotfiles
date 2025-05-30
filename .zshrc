@@ -168,3 +168,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/Repositories/dotfiles/.p10k.zsh.
 [[ ! -f ~/Repositories/dotfiles/.p10k.zsh ]] || source ~/Repositories/dotfiles/.p10k.zsh
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
