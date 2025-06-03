@@ -13,6 +13,14 @@ vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite current buffer' })
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndo tree' })
 
+vim.keymap.set('n', '<leader>N', function()
+  vim.cmd 'enew' -- Create new unnamed buffer
+  vim.bo.bufhidden = 'wipe' -- Wipe on hide
+  vim.bo.buftype = '' -- Ensure normal buffer
+  vim.bo.buflisted = true -- Show in buffer list
+  vim.bo.filetype = 'markdown' -- Set your preferred filetype here
+end, { desc = 'New unnamed buffer' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
