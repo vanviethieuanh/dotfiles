@@ -13,6 +13,10 @@ vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite current buffer' })
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndo tree' })
 
+vim.keymap.set('n', '<leader>F', '<cmd>lua require("spectre").toggle()<CR>', {
+  desc = 'Toggle Spectre',
+})
+
 vim.keymap.set('n', '<leader>N', function()
   vim.cmd 'enew' -- Create new unnamed buffer
   vim.bo.bufhidden = 'wipe' -- Wipe on hide

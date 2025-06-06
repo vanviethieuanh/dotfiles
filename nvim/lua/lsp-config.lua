@@ -17,7 +17,9 @@ return {
   },
 
   config = function()
+    local lspconfig = require 'lspconfig'
     local util = require 'lspconfig.util'
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
@@ -150,23 +152,20 @@ return {
         end,
       },
     }
-
-    -- LSP servers and clients are able to communicate to each other what features they support.
-    --  By default, Neovim doesn't support everything that is in the LSP specification.
-    --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
-    --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-    -- Enable the following language servers
-    --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-    --
-    --  Add any additional override configuration in the following tables. Available keys are:
-    --  - cmd (table): Override the default command used to start the server
-    --  - filetypes (table): Override the default list of associated filetypes for the server
-    --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-    --  - settings (table): Override the default settings passed when initializing the server.
-    --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    -- Customized servers
     local servers = {
+      terraformls = {
+        root_dir = util.root_pattern('.terraform', '.git', 'provider.tf'),
+      },
+      tflint = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+          },
+        },
+      },
       basedpyright = {
         settings = {
           basedpyright = {
@@ -177,61 +176,42 @@ return {
           },
         },
       },
-
-      lua_ls = {
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-          },
-        },
-      },
     }
 
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua code
+    -- LSP servers to exclude from Mason's automatic_enable
+    local excluded_servers = vim.tbl_keys(servers)
+
+    -- Tools to install (formatters, linters, LSPs)
+    local ensure_installed_tools = {
+      'stylua',
       'basedpyright',
       'bash-language-server',
       'black',
       'isort',
       'lua-language-server',
       'rust-analyzer',
-      'stylua',
       'terraform-ls',
       'tflint',
       'yaml-language-server',
-    })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+    }
 
+    -- Setup mason-tool-installer to install all needed tools
+    require('mason-tool-installer').setup {
+      ensure_installed = ensure_installed_tools,
+    }
+
+    -- Setup mason-lspconfig but disable automatic_enable for customized servers
     require('mason-lspconfig').setup {
       ensure_installed = {},
-      automatic_enable = true,
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
-        end,
+      automatic_enable = {
+        exclude = excluded_servers,
       },
     }
 
-    -- NOTE: Terraform
-    require('lspconfig').terraformls.setup {
-      root_dir = util.root_pattern('.terraform', '.git', 'provider.tf'),
-    }
-    require('lspconfig').tflint.setup {}
-
-    -- require('lspconfig').basedpyright.setup {
-    --   settings = {
-    --     basedpyright = {
-    --       analysis = {
-    --         typeCheckingMode = 'strict',
-    --         reportAny = false,
-    --       },
-    --     },
-    --   },
-    -- }
+    -- Manually set up customized servers
+    for name, config in pairs(servers) do
+      config.capabilities = capabilities
+      lspconfig[name].setup(config)
+    end
   end,
 }
