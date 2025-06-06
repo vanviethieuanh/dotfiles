@@ -33,7 +33,6 @@ return {
         },
         lsp = {
           auto_attach = true,
-          preference = { 'basedpyright', 'pyright' }, -- prefer basedpyright over pyright
         },
       }
     end,
