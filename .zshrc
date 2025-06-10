@@ -165,6 +165,7 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/Repositories/dotfiles/.p10k.zsh.
 [[ ! -f ~/Repositories/dotfiles/.p10k.zsh ]] || source ~/Repositories/dotfiles/.p10k.zsh
