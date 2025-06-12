@@ -70,14 +70,14 @@ return {
   },
 
   -- NOTE: Diff view
-  {
-    'sindrets/diffview.nvim',
-    config = function()
-      local diffview = require 'diffview'
-
-      vim.keymap.set('n', '<leader>hD', diffview.open, { desc = 'git [D]iff view' })
-    end,
-  },
+  -- {
+  --   'sindrets/diffview.nvim',
+  --   config = function()
+  --     local diffview = require 'diffview'
+  --
+  --     vim.keymap.set('n', '<leader>hD', diffview.open, { desc = 'git [D]iff view' })
+  --   end,
+  -- },
 
   -- NOTE: Custom git signs, shortcuts for git related like blame, etc ...
   -- Adds git related signs to the gutter, as well as utilities for managing changes.

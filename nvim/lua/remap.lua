@@ -64,3 +64,87 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('v', '<leader>a', 'ggVG')
 vim.keymap.set('n', '<leader>a', 'ggVG')
+
+vim.keymap.set('n', '<leader>grn', function()
+  local ts_utils = require 'nvim-treesitter.ts_utils'
+
+  local bufnr = vim.api.nvim_get_current_buf()
+  if vim.bo.filetype ~= 'terraform' then
+    print 'Not a Terraform file'
+    return
+  end
+
+  local node = ts_utils.get_node_at_cursor()
+  print('Node under cursor:', node and node:type() or 'none')
+
+  local block_type = nil
+
+  -- Climb up the tree to find a `block` of type `resource` or `module`
+  while node do
+    if node:type() == 'block' then
+      local first_child = node:named_child(0)
+      if first_child and first_child:type() == 'identifier' then
+        local ident_text = vim.treesitter.get_node_text(first_child, bufnr)
+        if ident_text == 'resource' or ident_text == 'module' then
+          block_type = ident_text
+          break
+        end
+      end
+    end
+    node = node:parent()
+  end
+
+  if not node or not block_type then
+    print 'No resource or module block found under cursor'
+    return
+  end
+
+  local type_node = block_type == 'resource' and node:named_child(1) or nil
+  local name_node = node:named_child(block_type == 'resource' and 2 or 1)
+
+  if not name_node or (block_type == 'resource' and not type_node) then
+    print 'Could not get block name (or type for resource)'
+    return
+  end
+
+  local resource_type = type_node and vim.treesitter.get_node_text(type_node, bufnr) or 'module'
+  local resource_name = vim.treesitter.get_node_text(name_node, bufnr)
+  resource_name = resource_name:sub(2, -2)
+
+  vim.ui.input({ prompt = 'New ' .. block_type .. ' name: ', default = resource_name }, function(new_name)
+    if not new_name or new_name == '' or new_name == resource_name then
+      return
+    end
+
+    -- Rename in buffer
+    local srow, scol, erow, ecol = name_node:range()
+    vim.api.nvim_buf_set_text(bufnr, srow, scol, erow, ecol, { '"' .. new_name .. '"' })
+    print('Renamed ' .. resource_type .. '.' .. resource_name .. ' to ' .. new_name)
+
+    -- Generate moved block
+    local from = block_type == 'resource' and (resource_type .. '.' .. resource_name) or ('module.' .. resource_name)
+
+    local to = block_type == 'resource' and (resource_type .. '.' .. new_name) or ('module.' .. new_name)
+
+    local moved_block = string.format(
+      [[
+moved {
+  from = %s
+  to   = %s
+}
+]],
+      from,
+      to
+    )
+    -- Append moved block to moved.tf
+    local moved_path = vim.fn.expand '%:p:h' .. '/moved.tf'
+    local f = io.open(moved_path, 'a+')
+    if f then
+      f:write('\n' .. moved_block)
+      f:close()
+      print 'Updated moved.tf'
+    else
+      print 'Failed to open moved.tf'
+    end
+  end)
+end, { desc = 'Rename Terraform resource or module with moved block' })
