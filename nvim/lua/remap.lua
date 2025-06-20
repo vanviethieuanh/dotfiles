@@ -8,7 +8,13 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- NOTE: Commands
 vim.keymap.set('n', '<leader>q', vim.cmd.bd, { desc = '[Q]uit current buffer' })
 vim.keymap.set('n', '<leader>Q', vim.cmd.qa, { desc = '[Q]uits all buffers except those that have unsaved work' })
-vim.keymap.set('n', '<leader>e', ':Neotree position=current<CR>', { desc = 'Open file [E]xplorer' })
+vim.keymap.set('n', '<leader>e', function()
+  if vim.fn.bufname() == '' then
+    vim.cmd 'enew' -- open a new empty buffer if none is open
+  end
+  vim.cmd 'Neotree position=current'
+end, { desc = 'Open file [E]xplorer' })
+-- vim.keymap.set('n', '<leader>e', ':Neotree position=current<CR>', { desc = 'Open file [E]xplorer' })
 vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite current buffer' })
 vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = '[d]iagnostic details' })
 vim.keymap.set('n', '<leader>dc', function()

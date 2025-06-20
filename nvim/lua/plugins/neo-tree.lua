@@ -13,6 +13,11 @@ return {
   opts = {
     filesystem = {
       filtered_items = {
+        bind_to_cwd = true, -- ensures Neo-tree follows Neovim's cwd
+        follow_current_file = {
+          enabled = true, -- updates root to the file in the current buffer
+        },
+        hijack_netrw_behavior = 'open_current', -- or "open_default" depending on your setup
         visible = true,
       },
     },
