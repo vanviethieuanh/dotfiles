@@ -213,5 +213,18 @@ return {
       config.capabilities = capabilities
       lspconfig[name].setup(config)
     end
+
+    local configs = require 'lspconfig.configs'
+    if not configs.templ then
+      configs.templ = {
+        default_config = {
+          cmd = { 'templ', 'lsp' },
+          filetypes = { 'templ' },
+          root_dir = require('lspconfig.util').root_pattern('go.mod', '.git'),
+          settings = {},
+        },
+      }
+    end
+    lspconfig.templ.setup {}
   end,
 }

@@ -33,6 +33,10 @@ return {
         },
         lsp = {
           auto_attach = true,
+          preference = {
+            'templ', -- prefer templ over html
+            'html',
+          },
         },
       }
     end,
