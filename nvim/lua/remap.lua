@@ -16,6 +16,8 @@ vim.keymap.set('n', '<leader>e', function()
 end, { desc = 'Open file [E]xplorer' })
 -- vim.keymap.set('n', '<leader>e', ':Neotree position=current<CR>', { desc = 'Open file [E]xplorer' })
 vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite current buffer' })
+
+-- NOTE: Diagnostic
 vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = '[d]iagnostic details' })
 vim.keymap.set('n', '<leader>dc', function()
   local diagnostic = vim.diagnostic.get(0, { lnum = vim.fn.line '.' - 1 })[1]
@@ -26,6 +28,15 @@ vim.keymap.set('n', '<leader>dc', function()
     print 'No diagnostic on current line'
   end
 end, { desc = '[d]iagnostic [c]opy to clipboard' })
+vim.keymap.set('n', '<leader>dC', function()
+  local diags = vim.diagnostic.get(0) -- 0 = current buffer
+  local msgs = {}
+  for _, d in ipairs(diags) do
+    table.insert(msgs, string.format('%s:%d:%d: %s', vim.api.nvim_buf_get_name(0), d.lnum + 1, d.col + 1, d.message))
+  end
+  vim.fn.setreg('+', table.concat(msgs, '\n')) -- copy to system clipboard
+  print('Copied ' .. #msgs .. ' diagnostics to clipboard')
+end, { desc = '[d]iagnostic [C]opy all to clipboard' })
 
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle [U]ndo tree' })
 
@@ -70,6 +81,24 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('v', '<leader>a', 'ggVG')
 vim.keymap.set('n', '<leader>a', 'ggVG')
+
+-- NOTE: Change indent, keep visual selected
+vim.keymap.set('v', '>', '>gv')
+vim.keymap.set('v', '<', '<gv')
+
+-- NOTE: Wrap toggle
+-- Toggle wrap with <leader>z
+vim.keymap.set('n', '<leader>z', function()
+  if vim.wo.wrap then
+    vim.wo.wrap = false
+    vim.wo.linebreak = false
+    print '[wrap OFF]'
+  else
+    vim.wo.wrap = true
+    vim.wo.linebreak = true
+    print '[wrap ON]'
+  end
+end, { desc = 'Toggle line wrapping' })
 
 vim.keymap.set('n', '<leader>grn', function()
   local ts_utils = require 'nvim-treesitter.ts_utils'
