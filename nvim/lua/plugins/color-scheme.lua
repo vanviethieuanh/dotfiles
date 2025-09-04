@@ -1,4 +1,4 @@
-local color_scheme = 'gruvbox-material'
+local color_scheme = 'folke/tokyonight.nvim'
 local color_name = color_scheme:match '[^/]+$'
 
 return {
@@ -8,7 +8,9 @@ return {
   config = function()
     -- Optionally configure and load the colorscheme
     -- directly inside the plugin declaration.
-    vim.g.gruvbox_material_background = 'hard'
-    vim.cmd.colorscheme(color_name)
+    --
+    -- vim.g.gruvbox_material_background = 'hard'
+
+    vim.cmd.colorscheme 'tokyonight-night'
   end,
 }
