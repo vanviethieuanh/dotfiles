@@ -174,3 +174,6 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 
 export PATH=$PATH:$(go env GOPATH)/bin
+export PATH="$HOME/miniconda3/bin:$PATH"
+
+source "$HOME/miniconda3/etc/profile.d/conda.sh"
