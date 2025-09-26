@@ -25,6 +25,7 @@ local mappings = {
     { 'n', 'nzzzv' },
     { 'N', 'Nzzzv' },
     { '<leader>a', 'ggVG' },
+
     {
       '<leader>z',
       function()
@@ -33,6 +34,16 @@ local mappings = {
         print(vim.wo.wrap and '[wrap ON]' or '[wrap OFF]')
       end,
       { desc = 'Toggle wrap' },
+    },
+    {
+      '<leader>e',
+      function()
+        if vim.fn.bufname() == '' then
+          vim.cmd 'enew' -- open a new empty buffer if none is open
+        end
+        vim.cmd 'Neotree position=current'
+      end,
+      { desc = 'Open file [E]xplorer' },
     },
 
     { '<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic float' } },
