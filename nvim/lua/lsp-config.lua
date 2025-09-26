@@ -166,16 +166,6 @@ return {
           },
         },
       },
-      -- basedpyright = {
-      --   settings = {
-      --     basedpyright = {
-      --       analysis = {
-      --         typeCheckingMode = 'basic',
-      --         reportAny = false,
-      --       },
-      --     },
-      --   },
-      -- },
     }
 
     -- LSP servers to exclude from Mason's automatic_enable

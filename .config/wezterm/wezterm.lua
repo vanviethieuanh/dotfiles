@@ -6,6 +6,9 @@ local utils = require("utils")
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+
+require("events")
+
 config.keys = {}
 
 config.initial_cols = 80
@@ -47,9 +50,18 @@ wezterm.on("window-config-reloaded", utils.center_content)
 
 -- NOTE: Key binding
 if wezterm.target_triple == "aarch64-apple-darwin" then
--- macOS-specific bindings can go here
+	local mac_keys = require("key-binding").Mac.keys
+	local mac_leader = require("key-binding").Mac.leader
+
+	config.leader = mac_leader
+	for _, key in ipairs(mac_keys) do
+		table.insert(config.keys, key)
+	end
 elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-	local linux_keys = require("key-binding").Linux
+	local linux_keys = require("key-binding").Linux.keys
+	local linux_leader = require("key-binding").Linux.leader
+
+	config.leader = linux_leader
 	for _, key in ipairs(linux_keys) do
 		table.insert(config.keys, key)
 	end
