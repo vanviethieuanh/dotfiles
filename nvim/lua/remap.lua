@@ -25,7 +25,6 @@ local mappings = {
     { 'n', 'nzzzv' },
     { 'N', 'Nzzzv' },
     { '<leader>a', 'ggVG' },
-
     {
       '<leader>z',
       function()
@@ -35,13 +34,17 @@ local mappings = {
       end,
       { desc = 'Toggle wrap' },
     },
+
     {
       '<leader>e',
       function()
-        if vim.fn.bufname() == '' then
-          vim.cmd 'enew' -- open a new empty buffer if none is open
+        if vim.fn.bufname() ~= '' then
+          -- Open Neo-tree in the current window, revealing current file
+          vim.cmd 'Neotree reveal current'
+        else
+          -- Fallback: toggle sidebar (default)
+          vim.cmd 'Neotree toggle'
         end
-        vim.cmd 'Neotree position=current'
       end,
       { desc = 'Open file [E]xplorer' },
     },
