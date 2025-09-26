@@ -19,8 +19,8 @@ local function leader_keys()
 	return {
 		{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 		{ key = "s", mods = "LEADER", action = act.EmitEvent("save-output") },
-		{ key = "+", mods = "LEADER", action = wezterm.action_callback(custom_actions.split_quad) },
-		{ key = "|", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "q", mods = "LEADER", action = wezterm.action_callback(custom_actions.split_quad) },
+		{ key = "\\", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	}
 end
 
