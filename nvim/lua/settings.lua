@@ -72,3 +72,6 @@ vim.opt.scrolloff = 13
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.opt.confirm = true
+
+-- Register the language
+require 'lsp.templ'

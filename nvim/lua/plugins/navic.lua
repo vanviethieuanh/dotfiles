@@ -1,6 +1,6 @@
 return {
   {
-    'nvim-navic',
+    'SmiteshP/nvim-navic',
     config = function()
       require('nvim-navic').setup {
         icons = {
@@ -33,6 +33,9 @@ return {
         },
         lsp = {
           auto_attach = true,
+          preference = {
+            'templ', -- prefer templ over html
+          },
         },
       }
     end,
