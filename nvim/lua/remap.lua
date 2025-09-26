@@ -71,6 +71,16 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('v', '<leader>a', 'ggVG')
 vim.keymap.set('n', '<leader>a', 'ggVG')
 
+vim.keymap.set('n', '<leader>dC', function()
+  local diags = vim.diagnostic.get(0) -- 0 = current buffer
+  local msgs = {}
+  for _, d in ipairs(diags) do
+    table.insert(msgs, string.format('%s:%d:%d: %s', vim.api.nvim_buf_get_name(0), d.lnum + 1, d.col + 1, d.message))
+  end
+  vim.fn.setreg('+', table.concat(msgs, '\n')) -- copy to system clipboard
+  print('Copied ' .. #msgs .. ' diagnostics to clipboard')
+end, { desc = 'Copy all [d]iagnostic to [C]lipboard' })
+
 vim.keymap.set('n', '<leader>grn', function()
   local ts_utils = require 'nvim-treesitter.ts_utils'
 

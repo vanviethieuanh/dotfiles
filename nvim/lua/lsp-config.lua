@@ -166,16 +166,6 @@ return {
           },
         },
       },
-      basedpyright = {
-        settings = {
-          basedpyright = {
-            analysis = {
-              typeCheckingMode = 'basic',
-              reportAny = false,
-            },
-          },
-        },
-      },
     }
 
     -- LSP servers to exclude from Mason's automatic_enable
@@ -184,7 +174,6 @@ return {
     -- Tools to install (formatters, linters, LSPs)
     local ensure_installed_tools = {
       'stylua',
-      'basedpyright',
       'bash-language-server',
       'black',
       'isort',
