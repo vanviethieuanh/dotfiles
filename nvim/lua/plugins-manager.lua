@@ -20,6 +20,7 @@ require('lazy').setup {
   'hashivim/vim-terraform',
   'nvim-pack/nvim-spectre',
 
+  require 'plugins.lua-snip',
   require 'plugins.bigfile',
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.telescope', -- Search
