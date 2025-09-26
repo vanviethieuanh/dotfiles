@@ -193,3 +193,8 @@ moved {
     end
   end)
 end, { desc = 'Rename Terraform resource or module with moved block' })
+
+-- keymaps.lua (or in your plugin setup)
+vim.keymap.set('n', '<leader>jY', function()
+  require('plugins.jsonpath').copy_at_cursor()
+end, { desc = 'Copy JSON path at cursor' })
