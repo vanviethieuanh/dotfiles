@@ -48,9 +48,19 @@ return {
     },
 
     completion = {
+      menu = {
+        border = 'rounded',
+        winhighlight = 'Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None',
+      },
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
-      documentation = { auto_show = false, auto_show_delay_ms = 500 },
+      documentation = {
+        auto_show = false,
+        auto_show_delay_ms = 500,
+        window = {
+          border = 'rounded',
+        },
+      },
     },
 
     sources = {
