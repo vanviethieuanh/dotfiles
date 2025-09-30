@@ -5,7 +5,7 @@ local mappings = {
   -- NOTE: Normal mode
   n = {
     { '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' } },
-    { '<leader>q', vim.cmd.bd, { desc = '[Q]uit buffer' } },
+    { '<leader>q', ':b#<bar>bd#<CR>', { desc = '[Q]uit buffer' } },
     { '<leader>Q', vim.cmd.qa, { desc = 'Quit all buffers' } },
     { '<leader>w', vim.cmd.w, { desc = '[W]rite buffer' } },
     { '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle undo tree' } },
@@ -17,6 +17,11 @@ local mappings = {
         vim.bo.bufhidden, vim.bo.buftype, vim.bo.buflisted, vim.bo.filetype = 'wipe', '', true, 'markdown'
       end,
       { desc = 'New unnamed buffer' },
+    },
+    {
+      '<leader>T',
+      ':set filetype=',
+      { desc = 'Prompt to select file [T]ype' },
     },
     { '<C-h>', '<C-w><C-h>', { desc = 'Move to left window' } },
     { '<C-l>', '<C-w><C-l>', { desc = 'Move to right window' } },
@@ -52,6 +57,10 @@ local mappings = {
     { '<leader>dd', vim.diagnostic.open_float, { desc = 'Diagnostic float' } },
     { '<leader>dc', require('utils.actions.diagnostic').copy_line, { desc = 'Copy diagnostic' } },
     { '<leader>dC', require('utils.actions.diagnostic').copy_all, { desc = 'Copy all diagnostics' } },
+
+    -- Swap jumplist navigation
+    { '<C-o>', '<C-i>', { desc = 'Jump forward (swapped)' } },
+    { '<C-i>', '<C-o>', { desc = 'Jump back (swapped)' } },
   },
   -- NOTE: Visual mode
   v = {

@@ -20,28 +20,29 @@ require('lazy').setup {
   'hashivim/vim-terraform',
   'nvim-pack/nvim-spectre',
 
-  require 'plugins.lua-snip',
-  require 'plugins.bigfile',
   require 'lsp-config', -- MAIN LSP config plugin
-  require 'plugins.telescope', -- Search
-  require 'plugins.git', -- Git related configurations
-  require 'plugins.which-key', -- Show shortcuts on pressing
-  require 'plugins.neo-tree', -- Dir tree
-  require 'plugins.conform', -- Formatter
-  require 'plugins.lazy-dev', -- LSP for NeoVim Config
-  require 'plugins.blinks', -- Autocompletion
-  require 'plugins.dashboard-nvim', -- Greeting screen
-  require 'plugins.color-scheme', -- Color Scheme
-  require 'plugins.mini', -- Mini tools
-  require 'plugins.treesitter', -- This create a tree for other plugins
-  require 'plugins.todo-comments', -- This highlight todo and notes.
-  require 'plugins.lint', -- Linter
   require 'plugins.auto-session', -- Session manager
+  require 'plugins.bigfile',
+  require 'plugins.blinks', -- Autocompletion
+  require 'plugins.color-scheme', -- Color Scheme
+  require 'plugins.conform', -- Formatter
+  require 'plugins.dashboard-nvim', -- Greeting screen
+  require 'plugins.git', -- Git related configurations
+  --  require 'plugins.harpoon',
   require 'plugins.indent-line',
-  require 'plugins.navic',
+  require 'plugins.lazy-dev', -- LSP for NeoVim Config
+  require 'plugins.lint', -- Linter
+  require 'plugins.lua-snip',
   require 'plugins.lualine',
+  require 'plugins.mini', -- Mini tools
+  require 'plugins.navic',
+  require 'plugins.neo-tree', -- Dir tree
   require 'plugins.noice',
   require 'plugins.suda',
+  require 'plugins.telescope', -- Search
+  require 'plugins.todo-comments', -- This highlight todo and notes.
+  require 'plugins.treesitter', -- This create a tree for other plugins
+  require 'plugins.which-key', -- Show shortcuts on pressing
 
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
