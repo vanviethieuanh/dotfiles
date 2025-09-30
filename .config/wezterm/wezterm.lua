@@ -17,7 +17,7 @@ config.initial_rows = 24
 config.enable_wayland = false
 
 -- NOTE: Color Scheme
-local selected_color_scheme = "Tokyo Night"
+local selected_color_scheme = "Gruvbox dark, hard (base16)"
 
 local theme_colors = utils.get_theme_colors(selected_color_scheme)
 config.color_scheme = selected_color_scheme
