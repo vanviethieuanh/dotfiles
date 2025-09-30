@@ -175,7 +175,37 @@ return {
         filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react', 'svelte' },
         init_options = { userLanguages = { templ = 'html' } },
       },
-      htmx = { filetypes = { 'html', 'templ' } },
+      htmx = {
+        filetypes = { 'html', 'templ' },
+        on_attach = function(client, bufnr)
+          if vim.bo.filetype == 'templ' then
+            -- Disable everything except hover
+            client.server_capabilities.completionProvider = nil
+            client.server_capabilities.renameProvider = nil
+            client.server_capabilities.documentFormattingProvider = nil
+            client.server_capabilities.documentRangeFormattingProvider = nil
+            -- hoverProvider stays enabled
+          end
+        end,
+      },
+      html = {
+        filetypes = { 'html', 'templ' }, -- add your templ files
+        settings = {
+          html = {
+            format = {
+              wrapLineLength = 0,
+              wrapAttributes = 'preserve', -- keeps attributes intact
+            },
+          },
+        },
+        on_attach = function(client, bufnr)
+          if vim.bo.filetype == 'templ' then
+            -- disable formatting here, let templ LSP handle it
+            client.server_capabilities.documentFormattingProvider = nil
+            client.server_capabilities.documentRangeFormattingProvider = nil
+          end
+        end,
+      },
       gopls = { settings = { gopls = { templateExtensions = { 'templ' } } } },
     }
 

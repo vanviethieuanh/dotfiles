@@ -58,6 +58,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.modeline = false
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
