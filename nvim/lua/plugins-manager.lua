@@ -19,6 +19,7 @@ require('lazy').setup {
   'arthurxavierx/vim-caser',
   'hashivim/vim-terraform',
   'nvim-pack/nvim-spectre',
+  'joerdav/templ.vim',
 
   require 'lsp-config', -- MAIN LSP config plugin
   require 'plugins.auto-session', -- Session manager

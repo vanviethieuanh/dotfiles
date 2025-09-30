@@ -152,7 +152,7 @@ return {
         end,
       },
     }
-    -- Customized servers
+
     local servers = {
       terraformls = {
         root_dir = util.root_pattern('.terraform', '.git', 'provider.tf'),
@@ -166,6 +166,17 @@ return {
           },
         },
       },
+      templ = {
+        cmd = { 'templ', 'lsp' },
+        filetypes = { 'templ' },
+        root_dir = util.root_pattern('go.mod', '.git'),
+      },
+      tailwindcss = {
+        filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react', 'svelte' },
+        init_options = { userLanguages = { templ = 'html' } },
+      },
+      htmx = { filetypes = { 'html', 'templ' } },
+      gopls = { settings = { gopls = { templateExtensions = { 'templ' } } } },
     }
 
     -- LSP servers to exclude from Mason's automatic_enable
@@ -202,18 +213,5 @@ return {
       config.capabilities = capabilities
       lspconfig[name].setup(config)
     end
-
-    local configs = require 'lspconfig.configs'
-    if not configs.templ then
-      configs.templ = {
-        default_config = {
-          cmd = { 'templ', 'lsp' },
-          filetypes = { 'templ' },
-          root_dir = require('lspconfig.util').root_pattern('go.mod', '.git'),
-          settings = {},
-        },
-      }
-    end
-    lspconfig.templ.setup {}
   end,
 }
