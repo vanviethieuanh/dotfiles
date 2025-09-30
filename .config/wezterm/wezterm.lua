@@ -14,6 +14,8 @@ config.keys = {}
 config.initial_cols = 80
 config.initial_rows = 24
 
+config.enable_wayland = false
+
 -- NOTE: Color Scheme
 local selected_color_scheme = "Tokyo Night"
 
