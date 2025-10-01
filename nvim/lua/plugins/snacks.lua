@@ -44,13 +44,6 @@ return {
       desc = 'Command History',
     },
     {
-      '<leader>e',
-      function()
-        Snacks.explorer()
-      end,
-      desc = 'File Explorer',
-    },
-    {
       '<leader>sp',
       function()
         Snacks.picker.projects()

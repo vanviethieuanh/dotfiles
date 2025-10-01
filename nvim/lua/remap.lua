@@ -39,7 +39,6 @@ local mappings = {
       end,
       { desc = 'Toggle wrap' },
     },
-
     {
       '<leader>e',
       function()

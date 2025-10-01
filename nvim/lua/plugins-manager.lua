@@ -20,8 +20,9 @@ require('lazy').setup {
   'hashivim/vim-terraform',
   'nvim-pack/nvim-spectre',
 
-  require 'plugins.snacks',
   require 'lsp-config', -- MAIN LSP config plugin
+
+  require 'plugins.snacks',
   require 'plugins.auto-session', -- Session manager
   require 'plugins.bigfile',
   require 'plugins.blinks', -- Autocompletion

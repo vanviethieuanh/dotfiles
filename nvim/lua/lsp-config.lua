@@ -153,6 +153,7 @@ return {
       },
     }
 
+    ---@type table<string, vim.lsp.Config>
     local servers = {
       terraformls = {
         root_dir = util.root_pattern('.terraform', '.git', 'provider.tf'),
@@ -211,7 +212,6 @@ return {
 
     -- LSP servers to exclude from Mason's automatic_enable
     local excluded_servers = vim.tbl_keys(servers)
-
     -- Tools to install (formatters, linters, LSPs)
     local ensure_installed_tools = {
       'stylua',
@@ -241,7 +241,9 @@ return {
     -- Manually set up customized servers
     for name, config in pairs(servers) do
       config.capabilities = capabilities
-      vim.lsp.config[name] = config
+      lspconfig[name].setup(config)
+      -- vim.lsp.config[name] = config
+      -- vim.lsp.enable(name)
     end
   end,
 }
