@@ -17,8 +17,6 @@ return {
   },
 
   config = function()
-    local lspconfig = require 'lspconfig'
-    local util = require 'lspconfig.util'
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -156,7 +154,9 @@ return {
     ---@type table<string, vim.lsp.Config>
     local servers = {
       terraformls = {
-        root_dir = util.root_pattern('.terraform', '.git', 'provider.tf'),
+        root_dir = function(bufnr, on_dir)
+          on_dir(vim.fs.root(bufnr, { '.terraform', '.git', 'provider.tf' }))
+        end,
       },
       tflint = {},
       lua_ls = {
@@ -170,7 +170,9 @@ return {
       templ = {
         cmd = { 'templ', 'lsp' },
         filetypes = { 'templ' },
-        root_dir = util.root_pattern('go.mod', '.git'),
+        root_dir = function(bufnr, on_dir)
+          on_dir(vim.fs.root(bufnr, { 'go.mod', '.git' }))
+        end,
       },
       tailwindcss = {
         filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react', 'svelte' },
@@ -241,9 +243,9 @@ return {
     -- Manually set up customized servers
     for name, config in pairs(servers) do
       config.capabilities = capabilities
-      lspconfig[name].setup(config)
-      -- vim.lsp.config[name] = config
-      -- vim.lsp.enable(name)
+
+      vim.lsp.config(name, config)
+      vim.lsp.enable(name)
     end
   end,
 }
