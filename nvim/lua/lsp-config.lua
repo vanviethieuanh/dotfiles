@@ -201,6 +201,14 @@ return {
             },
           },
         },
+        init_options = {
+          configurationSection = { 'html', 'css', 'javascript' },
+          embeddedLanguages = {
+            css = true,
+            javascript = true,
+          },
+          provideFormatter = true,
+        },
         on_attach = function(client, bufnr)
           if vim.bo.filetype == 'templ' then
             -- disable formatting here, let templ LSP handle it
@@ -210,6 +218,7 @@ return {
         end,
       },
       gopls = { settings = { gopls = { templateExtensions = { 'templ' } } } },
+      gdscript = {},
     }
 
     -- LSP servers to exclude from Mason's automatic_enable

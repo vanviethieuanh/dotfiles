@@ -11,7 +11,7 @@ return {
     picker = { enabled = true },
     notifier = { enabled = true },
     quickfile = { enabled = true },
-    scroll = { enabled = true },
+    scroll = { enabled = false },
   },
   keys = {
     -- Top Pickers & Explorer

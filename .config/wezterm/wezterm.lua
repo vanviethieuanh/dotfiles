@@ -28,11 +28,13 @@ config.color_scheme = selected_color_scheme
 if wezterm.target_triple == "aarch64-apple-darwin" then
 	config.font_size = 14 -- macOS Apple Silicon
 elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
-	config.window_decorations = "RESIZE"
+	config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 	config.font_size = 12 -- Linux
 else
 	config.font_size = 14 -- Fallback/default
 end
+
+config.integrated_title_buttons = { "Close" }
 config.line_height = 1.2
 config.font = wezterm.font("RobotoMono Nerd Font")
 
