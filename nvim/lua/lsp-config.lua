@@ -226,14 +226,7 @@ return {
     -- Tools to install (formatters, linters, LSPs)
     local ensure_installed_tools = {
       'stylua',
-      'bash-language-server',
-      'black',
-      'isort',
       'lua-language-server',
-      'rust-analyzer',
-      'terraform-ls',
-      'tflint',
-      'yaml-language-server',
     }
 
     -- Setup mason-tool-installer to install all needed tools
