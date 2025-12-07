@@ -175,12 +175,12 @@ return {
         end,
       },
       tailwindcss = {
-        filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react', 'svelte' },
+        filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react', 'svelte', 'typescriptreact', 'javascriptreact' },
         init_options = { userLanguages = { templ = 'html' } },
       },
       htmx = {
         filetypes = { 'html', 'templ' },
-        on_attach = function(client, bufnr)
+        on_attach = function(client)
           if vim.bo.filetype == 'templ' then
             -- Disable everything except hover
             client.server_capabilities.completionProvider = nil
