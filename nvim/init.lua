@@ -17,4 +17,6 @@ require 'autocmd'
 -- It's required to setup plugins commands under this require.
 require 'plugins-manager'
 
+require('linters').setup()
+
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'

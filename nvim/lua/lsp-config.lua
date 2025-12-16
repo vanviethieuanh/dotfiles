@@ -217,7 +217,13 @@ return {
           end
         end,
       },
-      gopls = { settings = { gopls = { templateExtensions = { 'templ' } } } },
+      gopls = {
+        settings = {
+          gopls = {
+            templateExtensions = { 'templ' },
+          },
+        },
+      },
       gdscript = {},
     }
 
