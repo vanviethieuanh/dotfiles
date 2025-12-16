@@ -221,6 +221,10 @@ return {
         settings = {
           gopls = {
             templateExtensions = { 'templ' },
+            staticcheck = true,
+            analyses = {
+              unusedparams = true,
+            },
           },
         },
       },
