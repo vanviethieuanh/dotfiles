@@ -74,5 +74,7 @@ vim.opt.scrolloff = 13
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+vim.opt.signcolumn = 'yes'
+
 -- Register the language
 require 'lsp.templ'

@@ -22,5 +22,14 @@ return {
         visible = true,
       },
     },
+    event_handlers = {
+      {
+        event = 'neo_tree_window_after_open',
+        handler = function(args)
+          vim.wo[args.winid].colorcolumn = ''
+          vim.wo[args.winid].signcolumn = 'no'
+        end,
+      },
+    },
   },
 }
