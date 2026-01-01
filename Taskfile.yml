@@ -11,8 +11,31 @@ tasks:
       - echo "{{.GREETING}}"
     silent: true
 
+  link-file:
+    internal: true
+    cmds:
+      - for:
+          - .gitconfig
+          - .p10k.zsh
+          - .zshrc
+        cmd: ln -sf "$(realpath {{.ITEM}})" "$(realpath ~)/{{.ITEM}}"
+
+  link-config-d:
+    internal: true
+    cmds:
+      - for:
+          - fastfetch
+          - hypr
+          - mako
+          - waybar
+          - wezterm
+          - nvim
+          - kitty
+          - yazi
+        cmd: ln -sf "$(realpath .config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
+
   link:
     desc: Create symbolic links from repo to actually config location
-    cmds:
-      - chmod +x ./scripts/link.sh
-      - ./scripts/link.sh
+    deps:
+      - link-file
+      - link-config-d

@@ -29,12 +29,12 @@ if wezterm.target_triple == "aarch64-apple-darwin" then
 	config.font_size = 14 -- macOS Apple Silicon
 elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
 	config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
-	config.font_size = 12 -- Linux
+	config.font_size = 18 -- Linux
 else
 	config.font_size = 14 -- Fallback/default
 end
 
-config.integrated_title_buttons = { "Close" }
+config.integrated_title_buttons = {}
 config.line_height = 1.2
 config.font = wezterm.font("RobotoMono Nerd Font")
 
@@ -49,8 +49,8 @@ config.tab_max_width = 64
 
 require("tab-title").setup(theme_colors)
 
-wezterm.on("window-resized", utils.center_content)
-wezterm.on("window-config-reloaded", utils.center_content)
+-- wezterm.on("window-resized", utils.center_content)
+-- wezterm.on("window-config-reloaded", utils.center_content)
 
 -- NOTE: Key binding
 if wezterm.target_triple == "aarch64-apple-darwin" then
@@ -70,5 +70,12 @@ elseif wezterm.target_triple == "x86_64-unknown-linux-gnu" then
 		table.insert(config.keys, key)
 	end
 end
+
+config.window_padding = {
+	left = 40,
+	right = 40,
+	top = 20,
+	bottom = 20,
+}
 
 return config

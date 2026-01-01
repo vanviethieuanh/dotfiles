@@ -22,6 +22,8 @@ require('lazy').setup {
 
   require 'lsp-config', -- MAIN LSP config plugin
 
+  require 'plugins.highlight-color',
+
   require 'plugins.snacks',
   require 'plugins.auto-session', -- Session manager
   require 'plugins.bigfile',
