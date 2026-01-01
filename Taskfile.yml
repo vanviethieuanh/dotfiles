@@ -32,7 +32,7 @@ tasks:
           - nvim
           - kitty
           - yazi
-        cmd: ln -sf "$(realpath .config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
+        cmd: ln -sf "$(realpath config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
 
   link:
     desc: Create symbolic links from repo to actually config location
