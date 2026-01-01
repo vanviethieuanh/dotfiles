@@ -3,13 +3,28 @@
 version: "3"
 
 vars:
-  GREETING: Hello, World!
+  WALLPAPER: /home/accodius/Downloads/wallhaven-6d6xwl.jpg
 
 tasks:
-  default:
+  install-hypr:
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - for:
+          - hyprland
+          - hyprpaper
+          - hyprshot
+          - swaync
+          - rofi
+          - pavucontrol
+          - waybar
+          - wev
+        cmd: echo "implement this"
+
+  link-wallpaper:
+    internal: true
+    cmds:
+      - for:
+          - config/rofi
+        cmd: ln -sf {{.WALLPAPER}} "$(realpath {{.ITEM}})/.current_wallpaper"
 
   link-file:
     internal: true
@@ -26,16 +41,22 @@ tasks:
       - for:
           - fastfetch
           - hypr
-          - mako
           - waybar
           - wezterm
           - nvim
           - kitty
           - yazi
-        cmd: ln -sf "$(realpath config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
+          - swaync
+          - rofi
+          - wofi
+          - matugen
+        cmd: |
+          rm -rf "$(realpath ~)/.config/{{.ITEM}}"
+          ln -sf "$(realpath config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
 
   link:
     desc: Create symbolic links from repo to actually config location
     deps:
       - link-file
       - link-config-d
+      - link-wallpaper

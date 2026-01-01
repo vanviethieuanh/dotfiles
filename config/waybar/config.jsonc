@@ -7,13 +7,13 @@
         "cpu",
         "memory",
         "network",
-        "custom/nordvpn",
-        "pulseaudio"
+        "custom/nordvpn"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "pulseaudio",
         "clock"
     ],
     "sway/window": {

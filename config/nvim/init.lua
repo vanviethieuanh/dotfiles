@@ -18,5 +18,6 @@ require 'autocmd'
 require 'plugins-manager'
 
 require('linters').setup()
+require('nvim-highlight-colors').turnOn()
 
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'

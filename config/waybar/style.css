@@ -48,6 +48,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
+    border-radius: 0.5rem;
     color: #ffffff;
     background: rgba(0, 0, 0, 0.3);
 }
@@ -107,6 +108,11 @@ button:hover {
 
 .modules-left {
     margin-left: 1rem;
+}
+
+
+.modules-right * {
+    margin-left: 10px;
 }
 
 #clock {
@@ -240,4 +246,15 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
+}
+
+#custom-notification {
+    border-radius: 0.5rem;
+    font-size: 14pt;
+    padding: 0 1em;
+}
+
+#custom-notification:hover {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
 }
