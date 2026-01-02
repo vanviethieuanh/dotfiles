@@ -17,6 +17,7 @@ tasks:
           - pavucontrol
           - waybar
           - wev
+          - uwsm
         cmd: echo "implement this"
 
   link-wallpaper:

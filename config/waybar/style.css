@@ -56,21 +56,20 @@ button:hover {
 #workspaces button {
     margin: 4px 0;
     padding: 2px 0.75rem;
-    background-color: transparent;
     color: #e0e0e0;
 
     border-radius: 0.5rem;
+
+    color: #ffffff;
 }
 
 #workspaces button:hover {
-    color: #ffffff;
     background: rgba(0, 0, 0, 0.3);
 }
 
 #workspaces button.focused,
 #workspaces button.active {
     background-color: rgba(0, 0, 0, 0.5);
-    color: #ffffff;
 }
 
 #workspaces button.urgent {
