@@ -1,0 +1,44 @@
+;; `` are just regular quotes
+(defpoll time :interval "60s"
+  `/home/accodius/.cargo/bin/lunis now -l zh -f "{y-s}{y-b}年 {m-S} {d-s}{d-b}日"`)
+
+(defwidget lunis_calligraphy []
+  (label
+    :class "calligraphy"
+    :text time))
+
+(defwindow lunis
+  :monitor 0
+  :wm-ignore true
+  :geometry (geometry
+    :x "30%"
+    :y "75%"
+    :width "35%"
+    :height "30%")
+  :stacking "bg"
+  :exclusive false
+  :focusable "none"
+  :namespace "eww"
+  (lunis_calligraphy))
+
+;; (defwidget powermenu_layout []
+;;   (box :orientation "vertical" :class "bx"
+;;    (button 
+;;      :class "shutdown-btn"
+;;      :onclick `notify-send -i dialog-information "Test Notification" "This is a critical test"`
+;;      "Click Me!"
+;;    )
+;;   )
+;; )
+;; 
+;; (defwindow powermenu
+;;   :monitor 0 ;; Optional for X11
+;;   :stacking "bg"
+;;   :windowtype "normal"
+;;   :wm-ignore true
+;;   :geometry (geometry
+;;     :y "85%"
+;;     :width "rofi -modi emoji -show emoji -emoji-format '{emoji} {name}'
+;;     :height "10%")
+;;   (powermenu_layout)  
+;; )

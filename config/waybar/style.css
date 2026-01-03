@@ -59,8 +59,6 @@ button:hover {
     color: #e0e0e0;
 
     border-radius: 0.5rem;
-
-    color: #ffffff;
 }
 
 #workspaces button:hover {
@@ -106,12 +104,12 @@ button:hover {
 }
 
 .modules-left {
-    margin-left: 1rem;
+    margin-left: 1em;
 }
 
 
 .modules-right * {
-    margin-left: 10px;
+    margin-right: 1em;
 }
 
 #clock {
@@ -247,13 +245,18 @@ label:focus {
     background-color: #0069d4;
 }
 
-#custom-notification {
+#custom-powermenu {
     border-radius: 0.5rem;
-    font-size: 14pt;
     padding: 0 1em;
+
+    color: #e0e0e0;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-#custom-notification:hover {
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.3);
+#custom-powermenu:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
 }

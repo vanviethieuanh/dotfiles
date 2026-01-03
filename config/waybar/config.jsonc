@@ -14,7 +14,9 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "clock"
+        "clock",
+        "custom/lunis",
+        "custom/powermenu"
     ],
     "sway/window": {
         "max-length": 50
@@ -27,23 +29,23 @@
     "network": {
         "interface": "enp5s0",
         "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "󰈀",
+        "format-wifi": "<span font='Symbols Nerd Font Mono, 16px'>{essid} ({signalStrength}%) </span>",
+        "format-ethernet": "<span font='Symbols Nerd Font Mono, 16px'>󰈀</span>",
         "format-disconnected": "",
-        "tooltip-format": "{ifnam} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format": "<span font='Symbols Nerd Font Mono, 16px'>{ifnam} via {gwaddr} 󰊗</span>",
+        "tooltip-format-wifi": "<span font='Symbols Nerd Font Mono, 16px'>{essid} ({signalStrength}%) </span>",
+        "tooltip-format-ethernet": "<span font='Symbols Nerd Font Mono, 16px'>{ifname} </span>",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50
     },
     "pulseaudio": {
-        "format": "  {volume}%",
-        "format-bluetooth": "  {volume}%",
-        "format-muted": "",
+        "format": "<span font='Symbols Nerd Font Mono, 16px'> </span> {volume}%",
+        "format-bluetooth": "<span font='Symbols Nerd Font Mono, 16px'> </span> {volume}%",
+        "format-muted": "<span font='Symbols Nerd Font Mono, 16px'></span>",
         "format-icons": {
             "default": [
-                "",
-                ""
+                "<span font='Symbols Nerd Font Mono, 16px'></span>",
+                "<span font='Symbols Nerd Font Mono, 16px'></span>"
             ]
         },
         "scroll-step": 1,
@@ -75,12 +77,22 @@
     },
     "memory": {
         "interval": 3,
-        "format": "  {used:0.1f}G/{total:0.1f}G",
+        "format": "<span font='Symbols Nerd Font Mono, 18px'></span>  {used:0.1f}G/{total:0.1f}G",
         "max-length": 20
     },
     "cpu": {
         "interval": 3,
-        "format": " {}%",
+        "format": "<span font='Symbols Nerd Font Mono, 16px'></span> {}%",
         "max-length": 10
+    },
+    "custom/lunis": {
+        "tooltip": false,
+        "exec": "/home/accodius/.cargo/bin/lunis now -l zh -f '{y-s}{y-b}年　{m-S}　{d-s}{d-b}日'",
+        "interval": 60
+    },
+    "custom/powermenu": {
+        "tooltip": false,
+        "format": "<span font='Symbols Nerd Font Mono, 16px'></span>",
+        "on-click": "~/.config/rofi/scripts/powermenu.sh"
     }
 }

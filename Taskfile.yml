@@ -6,6 +6,10 @@ vars:
   WALLPAPER: /home/accodius/Downloads/wallhaven-6d6xwl.jpg
 
 tasks:
+  install-fonts:
+    cmds:
+      - cp ./ZhiMangXing-Regular.ttf ~/.local/share/fonts/
+
   install-hypr:
     cmds:
       - for:
@@ -18,6 +22,7 @@ tasks:
           - waybar
           - wev
           - uwsm
+          - eww
         cmd: echo "implement this"
 
   link-wallpaper:
@@ -51,6 +56,7 @@ tasks:
           - rofi
           - wofi
           - matugen
+          - eww
         cmd: |
           rm -rf "$(realpath ~)/.config/{{.ITEM}}"
           ln -sf "$(realpath config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
@@ -61,3 +67,13 @@ tasks:
       - link-file
       - link-config-d
       - link-wallpaper
+
+  allow-x-all:
+    desc: Allow all scripts in config to execute
+    silent: true
+    cmds:
+      - echo "The following files will be modified:"
+      - find . -type f -name "*.sh"
+      - sudo -v
+      - read -p "Continue? [y/N] " ans && [ "$ans" = "y" ]
+      - sudo find . -type f -name "*.sh" -exec chmod +x {} +
