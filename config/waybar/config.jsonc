@@ -13,6 +13,7 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "custom/brightness",
         "pulseaudio",
         "clock",
         "custom/lunis",
@@ -94,5 +95,13 @@
         "tooltip": false,
         "format": "<span font='Symbols Nerd Font Mono, 16px'></span>",
         "on-click": "~/.config/rofi/scripts/powermenu.sh"
+    },
+    "custom/brightness": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "./config/waybar/scripts/fetch_sunset.sh",
+        "format": "<span font='Symbols Nerd Font Mono, 16px'></span> {text}",
+        "on-scroll-up": "hyprctl hyprsunset gamma +1",
+        "on-scroll-down": "hyprctl hyprsunset gamma -1"
     }
 }
