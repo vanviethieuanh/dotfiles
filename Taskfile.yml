@@ -10,20 +10,27 @@ tasks:
     cmds:
       - cp ./ZhiMangXing-Regular.ttf ~/.local/share/fonts/
 
-  install-hypr:
+  install:
+    vars:
+      PACKAGES: >
+        hyprland
+        hyprpaper
+        hyprshot
+        swaync
+        rofi
+        pavucontrol
+        waybar
+        wev
+        uwsm
+        hyprsunset
+        cargo
     cmds:
-      - for:
-          - hyprland
-          - hyprpaper
-          - hyprshot
-          - swaync
-          - rofi
-          - pavucontrol
-          - waybar
-          - wev
-          - uwsm
-          - eww
-        cmd: echo "implement this"
+      - sudo pacman -S --needed {{.PACKAGES}}
+
+  install-cargo:
+    cmds:
+      - echo "https://github.com/elkowar/eww"
+      - echo "https://github.com/vanviethieuanh/lunis"
 
   link-wallpaper:
     internal: true
