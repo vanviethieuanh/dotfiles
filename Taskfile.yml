@@ -13,17 +13,17 @@ tasks:
   install:
     vars:
       PACKAGES: >
+        cargo
         hyprland
         hyprpaper
         hyprshot
-        swaync
-        rofi
+        hyprsunset
         pavucontrol
+        rofi
+        swaync
+        uwsm
         waybar
         wev
-        uwsm
-        hyprsunset
-        cargo
     cmds:
       - sudo pacman -S --needed {{.PACKAGES}}
 
