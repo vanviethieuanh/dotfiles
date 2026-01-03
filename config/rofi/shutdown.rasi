@@ -1,11 +1,9 @@
 configuration {
     modi: "drun";
-    font: "RobotoMono Nerd Font 10";
+    font: "RobotoMono Nerd Font 14";
     display-drun: "";
     drun-display-format: "{name}";
     sidebar-mode: false;
-    show-icons: true;
-    icon-theme: "WhiteSur";
 }
 
 @theme "/dev/null"
@@ -22,14 +20,17 @@ configuration {
 
 window {
     transparency: "real";
-    width: 711px;
+    width: 400px;
 
     border-radius: 8px;
 }
-prompt { enabled: false;
+
+prompt { 
+    enabled: false;
 }
 
 entry {
+    enabled: false;
     placeholder: "Search";
     placeholder-color: @fg;
     expand: true;
@@ -40,10 +41,10 @@ entry {
 inputbar {
     children: [prompt, entry];
     // Origin: https://wallhaven.cc/w/6d6xwl
-    background-image: url(".current_wallpaper");
+    background-image: url("shutdown.jpg", width);
     expand: false;
     border-radius: 0 0 8px 8px;
-    padding: 100px 30px 30px 300px;
+    padding: 160px 30px 30px 300px;
 }
 
 listview {
@@ -51,7 +52,7 @@ listview {
     lines: 4;
     cycle: false;
     dynamic: true;
-    layout: vertical;
+    layout: horizontal;
     padding: 30px;
 }
 
@@ -71,13 +72,6 @@ element-text {
     background-color: inherit;
     text-color: inherit;
 }
-
-element-icon {
-    background-color:   transparent;
-    size:           1.5em;
-    vertical-align: 0.5;
-}
-
 element selected {
     background-color: @button;
     border-radius: 8px;

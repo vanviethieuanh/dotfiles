@@ -1,8 +1,8 @@
 @define-color text @foreground;
-@define-color background-alt @color1;
-@define-color selected @color3;
+@define-color background-alt @cursor;
+@define-color selected @color15;
 @define-color hover @color5;
-@define-color urgent @color2;
+@define-color urgent @color1;
 
 * {
 

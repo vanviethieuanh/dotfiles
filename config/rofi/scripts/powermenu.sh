@@ -1,10 +1,23 @@
 #!/bin/sh
 
-CHOSEN=$(printf "Reboot\nShutdown\nLog Out" | rofi -dmenu -i -config ~/.config/rofi/shutdown.rasi)
+CHOSEN=$(rofi -dmenu -i -config ~/.config/rofi/shutdown.rasi <<EOF
+Reboot
+Shutdown
+Log Out
+EOF
+)
 
 case "$CHOSEN" in
-	"Reboot") reboot ;;
-	"Shutdown") poweroff ;;
-	"Log Out") hyprctl dispatch exit ;;
-	*) exit 1 ;;
+    "Reboot")
+        reboot
+        ;;
+    "Shutdown")
+        poweroff
+        ;;
+    "Log Out")
+        hyprctl dispatch exit
+        ;;
+    *)
+        exit 1
+        ;;
 esac

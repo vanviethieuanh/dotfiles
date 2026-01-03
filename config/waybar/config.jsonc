@@ -87,7 +87,7 @@
     },
     "custom/lunis": {
         "tooltip": false,
-        "exec": "/home/accodius/.cargo/bin/lunis now -l zh -f '{y-s}{y-b}年　{m-S}　{d-s}{d-b}日'",
+        "exec": "/home/accodius/.cargo/bin/lunis now -l vi -f '{y-s} {y-b} - {m-S} - {d-s} {d-b} ngày {d-n}'",
         "interval": 60
     },
     "custom/powermenu": {
