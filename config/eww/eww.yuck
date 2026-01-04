@@ -22,12 +22,12 @@
   (lunis_calligraphy))
 
 ;; (defwidget powermenu_layout []
-;;   (box :orientation "vertical" :class "bx"
-;;    (button 
-;;      :class "shutdown-btn"
-;;      :onclick `notify-send -i dialog-information "Test Notification" "This is a critical test"`
-;;      "Click Me!"
-;;    )
+;;   (box
+;;     :class "grid"
+;;     (button
+;;       :class "shutdown-btn"
+;;       :onclick `notify-send -i dialog-information "Test Notification" "This is a critical test"`
+;;     )
 ;;   )
 ;; )
 ;; 
@@ -37,8 +37,8 @@
 ;;   :windowtype "normal"
 ;;   :wm-ignore true
 ;;   :geometry (geometry
-;;     :y "85%"
-;;     :width "rofi -modi emoji -show emoji -emoji-format '{emoji} {name}'
-;;     :height "10%")
+;;     :width "100%"
+;;     :height "100%")
 ;;   (powermenu_layout)  
 ;; )
+;; 

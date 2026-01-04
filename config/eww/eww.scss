@@ -23,11 +23,9 @@ window {
     2px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-
-// .bx {
-//   padding: 0 0.5rem;
-//
-//   .shutdown-btn {
-//     background-color: red;
-//   }
-// }
+.grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+  background-size: calc(100% / 12) calc(100% / 12);
+}
