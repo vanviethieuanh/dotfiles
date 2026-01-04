@@ -50,20 +50,11 @@ tasks:
 
   link-config-d:
     internal: true
+    vars:
+      DIRS:
+        sh: ls config
     cmds:
-      - for:
-          - fastfetch
-          - hypr
-          - waybar
-          - wezterm
-          - nvim
-          - kitty
-          - yazi
-          - swaync
-          - rofi
-          - wofi
-          - matugen
-          - eww
+      - for: { var: DIRS }
         cmd: |
           rm -rf "$(realpath ~)/.config/{{.ITEM}}"
           ln -sf "$(realpath config/{{.ITEM}})" "$(realpath ~)/.config/{{.ITEM}}"
