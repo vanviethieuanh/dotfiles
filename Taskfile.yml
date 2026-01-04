@@ -75,3 +75,11 @@ tasks:
       - sudo -v
       - read -p "Continue? [y/N] " ans && [ "$ans" = "y" ]
       - sudo find . -type f -name "*.sh" -exec chmod +x {} +
+
+  get-btop-theme:
+    desc: Get btop themes
+    cmds:
+      - git clone https://github.com/aristocratos/bpytop.git /tmp/bpytop --depth=1
+      - mkdir -p "$HOME/.config/btop/themes"
+      - cp -r /tmp/bpytop/themes/* "$HOME/.config/btop/themes"
+      - rm -rf /tmp/bpytop
