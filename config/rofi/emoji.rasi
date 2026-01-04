@@ -39,7 +39,7 @@ entry {
 inputbar {
     children: [prompt, entry];
     // Origin: https://wallhaven.cc/w/6d6xwl
-    background-image: url(".current_wallpaper");
+    background-image: url("/home/accodius/.config/assets/rofi_wide.jpg");
     expand: false;
     border-radius: 0 0 8px 8px;
     padding: 30px;
