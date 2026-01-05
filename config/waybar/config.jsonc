@@ -14,10 +14,12 @@
     ],
     "modules-right": [
         "custom/brightness",
+        "custom/separator",
         "pulseaudio",
+        "custom/separator",
         "clock",
-        "custom/lunis",
-        "custom/powermenu"
+        "custom/separator",
+        "custom/lunis"
     ],
     "sway/window": {
         "max-length": 50
@@ -73,7 +75,7 @@
         }
     },
     "custom/nordvpn": {
-        "exec": "~/.config/waybar/scripts/nordvpn-status.sh",
+        "exec": "~/.config/scripts/nordvpn-status.sh",
         "interval": 1
     },
     "memory": {
@@ -99,9 +101,14 @@
     "custom/brightness": {
         "interval": 1,
         "return-type": "json",
-        "exec": "./config/waybar/scripts/fetch_sunset.sh",
+        "exec": "~/.config/scripts/fetch_sunset.sh",
         "format": "<span font='Symbols Nerd Font Mono, 16px'></span> {text}",
         "on-scroll-up": "hyprctl hyprsunset gamma +1",
         "on-scroll-down": "hyprctl hyprsunset gamma -1"
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
     }
 }

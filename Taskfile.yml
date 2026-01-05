@@ -27,6 +27,7 @@ tasks:
       YAY: >
         clipse
         awww-git
+        walker
       CARGO: >
         https://github.com/elkowar/eww
         https://github.com/vanviethieuanh/lunis

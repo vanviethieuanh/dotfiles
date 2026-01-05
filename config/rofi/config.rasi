@@ -9,6 +9,7 @@ configuration {
 }
 
 @theme "/dev/null"
+@import "colors.rais"
 
 * {
     bg: #1d2021;
@@ -19,14 +20,14 @@ configuration {
     text-color: @fg;
 }
 
-
+mainbox { background-color: blue; }
 window {
     transparency: "real";
     width: 711px;
-
     border-radius: 8px;
 }
-prompt { enabled: false;
+prompt {
+ enabled: false;
 }
 
 entry {
