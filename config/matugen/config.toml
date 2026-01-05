@@ -1,0 +1,77 @@
+[config.wallpaper]
+command = "hyprctl"
+arguments = ["hyprpaper", "wallpaper", ", {{image}}, cover"]
+set = true
+
+[templates.discord]
+input_path = './templates/discord.css'
+output_path = '~/Downloads/discords.css'
+
+[templates.btop]
+input_path = './templates/terminal/btop.theme'
+output_path = '~/.config/btop/themes/mine.theme'
+
+[templates.gtk4]
+  input_path  = './templates/gtk/colors.css'
+  output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.gtk3]
+  input_path  = './templates/gtk/colors.css'
+  output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.wezterm]
+  input_path  = './templates/terminal/wezterm.toml'
+  output_path = '~/.config/wezterm/colors/Matugen-Material.toml'
+
+[templates.clipse]
+  input_path  = './templates/terminal/clipse.json'
+  output_path = '~/.config/clipse/custom_theme.json'
+
+[templates.hyprlandcolor]
+  input_path  = './templates/hypr/general.hyprland.conf'
+  output_path = '~/.config/hypr/lib/general.hyprland.conf'
+
+
+[templates.kitty]
+  input_path  = './templates/terminal/kitty.conf'
+  output_path = '~/.config/kitty/colors.conf'
+
+[templates.terminal_colors]
+  input_path  = './templates/terminal/colors.json'
+  output_path = '~/.cache/wal/colors.json'
+
+[templates.bat]
+  input_path  = './templates/terminal/bat.tmTheme'
+  output_path = '~/.config/bat/themes/Matugen.tmTheme'
+
+[templates.yazi]
+  input_path  = './templates/terminal/yazi.toml'
+  output_path = '~/.config/yazi/theme.toml'
+
+[templates.rofi]
+  input_path  = './templates/rofi.rasi'
+  output_path = '~/.config/rofi/colors.rasi'
+
+[templates.qtct]
+  input_path  = './templates/qtct.conf'
+  output_path = '~/.local/share/color-schemes/Matugen.colors'
+
+[templates.fzf]
+  input_path  = './templates/terminal/fzf.sh'
+  output_path = '~/.cache/zsh/fzf'
+
+[templates.folders-color]
+  input_path  = './templates/folder-color.txt'
+  output_path = '~/.cache/wal/folder-color.txt'
+
+[config.custom_colors.warning]
+  color = "#f9e2af"
+  blend = true
+
+[config.custom_colors.info]
+  color = "#89b4fa"
+  blend = true
+
+[config.custom_colors.success]
+  color = "#a6e3a1"
+  blend = true

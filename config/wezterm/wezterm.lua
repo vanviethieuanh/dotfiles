@@ -17,10 +17,13 @@ config.initial_rows = 24
 config.enable_wayland = false
 
 -- NOTE: Color Scheme
-local selected_color_scheme = "Gruvbox dark, hard (base16)"
+config.color_scheme = "Matugen Material"
 
-local theme_colors = utils.get_theme_colors(selected_color_scheme)
-config.color_scheme = selected_color_scheme
+-- local selected_color_scheme = "Gruvbox dark, hard (base16)"
+--
+-- local theme_colors = utils.get_theme_colors(selected_color_scheme)
+-- config.color_scheme = selected_color_scheme
+-- config.colors = require("color-scheme")
 
 -- This is where you actually apply your config choices
 -- NOTE: Font settings

@@ -12,7 +12,7 @@ tasks:
 
   install:
     vars:
-      PACKAGES: >
+      PACMAN: >
         cargo
         hyprland
         hyprpaper
@@ -24,8 +24,11 @@ tasks:
         uwsm
         waybar
         wev
+      YAY: >
+        clipse
     cmds:
-      - sudo pacman -S --needed {{.PACKAGES}}
+      - sudo pacman -S --needed {{.PACMAN}}
+      - yay -S --needed {{.YAY}}
 
   install-cargo:
     cmds:
