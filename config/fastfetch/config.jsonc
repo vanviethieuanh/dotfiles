@@ -9,7 +9,7 @@
     },
     "logo": {
         "type": "iterm",
-        "source": "$HOME/Repositories/dotfiles/.config/fastfetch/assets/frieren.png", // Built-in logo name or file path
+        "source": "$HOME/Repositories/dotfiles/.config/fastfetch/assets/the_geographer.jpg", // Built-in logo name or file path
         "padding": {
             "top": 0,
             "left": 0,
