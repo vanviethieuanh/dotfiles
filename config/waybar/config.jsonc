@@ -31,9 +31,9 @@
     },
     "network": {
         "interface": "enp5s0",
-        "format": "{ifname}",
+        "format": "{ifname} {bandwidthUpOctets}",
         "format-wifi": "<span font='Symbols Nerd Font Mono, 16px'>{essid} ({signalStrength}%) </span>",
-        "format-ethernet": "<span font='Symbols Nerd Font Mono, 16px'>󰈀</span>",
+        "format-ethernet": "<span font='Symbols Nerd Font Mono, 16px'>󰈀</span> <span font='Symbols Nerd Font Mono, 12px'></span> {bandwidthUpBytes} <span font='Symbols Nerd Font Mono, 12px'></span> {bandwidthDownBytes}",
         "format-disconnected": "",
         "tooltip-format": "<span font='Symbols Nerd Font Mono, 16px'>{ifnam} via {gwaddr} 󰊗</span>",
         "tooltip-format-wifi": "<span font='Symbols Nerd Font Mono, 16px'>{essid} ({signalStrength}%) </span>",
@@ -110,5 +110,5 @@
         "format": "|",
         "interval": "once",
         "tooltip": false
-    }
+    },
 }

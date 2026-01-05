@@ -85,3 +85,6 @@ tasks:
       - mkdir -p "$HOME/.config/btop/themes"
       - cp -r /tmp/bpytop/themes/* "$HOME/.config/btop/themes"
       - rm -rf /tmp/bpytop
+
+  restart-waybar:
+    cmd: pkill -SIGUSR2 waybar
