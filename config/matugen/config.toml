@@ -1,15 +1,11 @@
 [config.wallpaper]
-command = "hyprctl"
-arguments = ["hyprpaper", "wallpaper", ", {{image}}, cover"]
-set = true
-
-[templates.discord]
-input_path = './templates/discord.css'
-output_path = '~/Downloads/discords.css'
+  command = "awww"
+  arguments = ["img", "--transition-type", "center"]
+  set = true
 
 [templates.btop]
-input_path = './templates/terminal/btop.theme'
-output_path = '~/.config/btop/themes/mine.theme'
+  input_path = './templates/terminal/btop.theme'
+  output_path = '~/.config/btop/themes/mine.theme'
 
 [templates.gtk4]
   input_path  = './templates/gtk/colors.css'
@@ -30,7 +26,6 @@ output_path = '~/.config/btop/themes/mine.theme'
 [templates.hyprlandcolor]
   input_path  = './templates/hypr/general.hyprland.conf'
   output_path = '~/.config/hypr/lib/general.hyprland.conf'
-
 
 [templates.kitty]
   input_path  = './templates/terminal/kitty.conf'
@@ -59,10 +54,6 @@ output_path = '~/.config/btop/themes/mine.theme'
 [templates.fzf]
   input_path  = './templates/terminal/fzf.sh'
   output_path = '~/.cache/zsh/fzf'
-
-[templates.folders-color]
-  input_path  = './templates/folder-color.txt'
-  output_path = '~/.cache/wal/folder-color.txt'
 
 [config.custom_colors.warning]
   color = "#f9e2af"

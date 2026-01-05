@@ -26,14 +26,13 @@ tasks:
         wev
       YAY: >
         clipse
+        awww-git
+      CARGO: >
+        https://github.com/elkowar/eww
+        https://github.com/vanviethieuanh/lunis
     cmds:
       - sudo pacman -S --needed {{.PACMAN}}
-      - yay -S --needed {{.YAY}}
-
-  install-cargo:
-    cmds:
-      - echo "https://github.com/elkowar/eww"
-      - echo "https://github.com/vanviethieuanh/lunis"
+      - yay -S --needed --noconfirm --removemake {{.YAY}}
 
   link-wallpaper:
     internal: true
