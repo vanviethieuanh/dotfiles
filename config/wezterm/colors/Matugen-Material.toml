@@ -3,48 +3,48 @@
 # DO NOT EDIT
 
 [colors]
-foreground = "#dee4de"
-background = "#0f1511"
+foreground = "#ede0d4"
+background = "#18120b"
 
-cursor_bg = "#b4ccbd"
-cursor_fg = "#0f1511"
-cursor_border = "#b4ccbd"
+cursor_bg = "#ddc2a1"
+cursor_fg = "#18120b"
+cursor_border = "#ddc2a1"
 
-selection_bg = "#b4ccbd"
-selection_fg = "#20352a"
+selection_bg = "#ddc2a1"
+selection_fg = "#3e2d16"
 
-scrollbar_thumb = "#8a938c"
-split = "#404943"
+scrollbar_thumb = "#9c8f80"
+split = "#4f4539"
 
 ansi = [
-  "#0f1511",        # black
+  "#18120b",        # black
   "#ffb4ab",              # red
-  "#8ed5b0",            # green
-  "#a5cdde",           # yellow
-  "#b4ccbd",          # blue
-  "#244c5a", # magenta
-  "#364b40",# cyan
-  "#dee4de",         # white
+  "#f5bd6f",            # green
+  "#b8cda1",           # yellow
+  "#ddc2a1",          # blue
+  "#3a4c2a", # magenta
+  "#56442a",# cyan
+  "#ede0d4",         # white
 ]
 
 brights = [
-  "#353b36",     # bright black
+  "#3f3830",     # bright black
   "#93000a",    # bright red
-  "#005236",  # bright green
-  "#c0e9fa",     # bright yellow
-  "#d0e8d8",    # bright blue
-  "#a5cdde", # bright magenta
-  "#b4ccbd",# bright cyan
-  "#c0c9c1", # bright white
+  "#633f00",  # bright green
+  "#d4eabb",     # bright yellow
+  "#fbdebc",    # bright blue
+  "#b8cda1", # bright magenta
+  "#ddc2a1",# bright cyan
+  "#d3c4b4", # bright white
 ]
 
 [colors.indexed]
-16 = "#226a4c"
-17 = "#a5cdde"
-18 = "#171d19"
-19 = "#1b211d"
-20 = "#262b28"
-21 = "#303632"
+16 = "#805610"
+17 = "#b8cda1"
+18 = "#211b13"
+19 = "#251f17"
+20 = "#302921"
+21 = "#3b342b"
 
 [metadata]
 name = "Matugen Material"

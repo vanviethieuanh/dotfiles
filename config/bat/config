@@ -8,7 +8,8 @@
 
 # for a list of all available themes
 
---theme="Matugen"
+--theme=base16
+--italic-text=always
 
 # Enable this to use italic text on the terminal. This is not supported on all
 
