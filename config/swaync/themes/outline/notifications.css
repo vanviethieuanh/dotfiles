@@ -1,0 +1,119 @@
+* {
+    all: unset;
+
+    color: @bg_h;
+    font-size: 14px;
+    font-family: "RobotoMono Nerd Font";
+    transition: 200ms;
+}
+
+.floating-notifications.background {
+    background: transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+    background: @bg_h;
+    border-radius: 8px;
+
+    margin: 16px;
+    margin-right: 24px;
+    padding: 0;
+
+    box-shadow: 6px 6px 0 @bg_h;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification {
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.notification.critical {
+    border: 2px solid @bg_h;
+    background-color: @red;
+}
+
+.notification.low {
+    border: 2px solid @bg_h;
+    background-color: @blue;
+}
+
+.notification.normal {
+    border: 2px solid @bg_h;
+    background-color: @aqua;
+}
+
+.notification-content {
+    color: @bg_h;
+    margin: 8px;
+}
+
+.summary {
+    font-weight: 800;
+    font-size: 1rem;
+
+    color: @bg_h;
+}
+
+.body {
+    font-size: 0.8rem;
+    color: @bg_h;
+}
+
+.image,
+.app-icon {
+    margin: 10px 20px 10px 0px;
+
+    border-radius: 6px;
+    border: 2px solid @bg4;
+    background-color: @bg;
+}
+
+progress {
+    min-height: 6px;
+    border-radius: 0;
+    background-color: @bg2;
+}
+
+.notification.low progress,
+.notification.normal progress {
+    background-color: @orange;
+}
+
+.notification-action {
+    margin: 6px;
+    padding: 6px 10px;
+
+    border-radius: 6px;
+    background-color: @bg_s;
+    border: 2px solid @bg3;
+
+
+    color: @bg_h;
+}
+
+.notification-action:hover {
+    background-color: @bg1;
+    border-color: @orange;
+
+}
+
+.notification-action:active {
+    background-color: @orange;
+    color: @bg_h;
+}
+
+.close-button {
+    margin: 6px;
+    padding: 2px;
+
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+.close-button:hover {
+    color: @bg_h;
+}
+
+.close-button:active {
+    color: @bg_h;
+}

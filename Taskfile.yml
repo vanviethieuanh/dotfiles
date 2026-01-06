@@ -88,3 +88,8 @@ tasks:
 
   restart-waybar:
     cmd: pkill -SIGUSR2 waybar
+
+  restart-swaync:
+    cmds:
+      - swaync-client -R
+      - swaync-client -rs

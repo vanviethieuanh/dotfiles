@@ -5,7 +5,9 @@
     "margin-top": 5,
     "modules-left": [
         "cpu",
+        "custom/separator",
         "memory",
+        "custom/separator",
         "network",
         "custom/nordvpn"
     ],
@@ -19,7 +21,9 @@
         "custom/separator",
         "clock",
         "custom/separator",
-        "custom/lunis"
+        "custom/lunis",
+        "custom/separator",
+        "custom/notification"
     ],
     "sway/window": {
         "max-length": 50
@@ -110,5 +114,11 @@
         "format": "|",
         "interval": "once",
         "tooltip": false
+    },
+    "custom/notification": {
+        "format": "<span font='Symbols Nerd Font Mono, 16px'>󰚅</span>",
+        "interval": "once",
+        "tooltip": false,
+        "on-click": "swaync-client -op"
     },
 }

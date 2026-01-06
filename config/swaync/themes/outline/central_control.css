@@ -1,0 +1,241 @@
+/* =======================================
+   GLOBAL STYLES
+   ======================================= */
+* {
+    all: unset;
+    color: @bg_s;
+    font-size: 14px;
+    font-family: "Roboto Mono Nerd Font";
+    transition: 200ms;
+}
+
+/* Transparent base */
+.blank-window {
+    background: transparent;
+}
+
+/* =======================================
+   CONTROL CENTER
+   ======================================= */
+.control-center {
+    background: @yellow-dim;
+    border-radius: 8px;
+    border: 2px solid @bg_h;
+
+    padding: 12px;
+
+    margin: 16px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+
+.control-center:hover {
+    box-shadow: 6px 6px 0 @bg_h;
+}
+
+/* ---------------------------------------
+   Notifications
+   --------------------------------------- */
+.control-center .notification-row .notification {
+    border-radius: 8px;
+    margin: 2px 0;
+    /* small spacing for stacking */
+    padding: 6px;
+    border: none;
+    /* retro solid shadow */
+
+    border: 2px solid @bg_h;
+}
+
+.control-center .notification-row .notification .notification-content {
+    margin: 4px;
+    padding: 2px;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* {
+    min-height: 3.4em;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
+    background: @orange;
+    color: @fg2;
+    border-radius: 12px;
+    border-color: @fg2;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
+    background: @orange-dim;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
+    background-color: @orange;
+}
+
+/* ---------------------------------------
+   Close button
+   --------------------------------------- */
+.control-center .notification-row .notification-background .close-button {
+    background: @bg2;
+    border-radius: 6px;
+    color: @fg2;
+    margin: 0;
+    padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+    background-color: @orange-dim;
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+    background-color: @orange;
+}
+
+/* ---------------------------------------
+   Progress bars
+   --------------------------------------- */
+progressbar,
+progress,
+trough {
+    border-radius: 8px;
+}
+
+progressbar {
+    background-color: @fg3;
+}
+
+/* ---------------------------------------
+   Notifications expanded group
+   --------------------------------------- */
+.notification-group {
+    margin: 2px 8px;
+}
+
+.notification-group-headers {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: @bg_h;
+    letter-spacing: 2px;
+}
+
+.notification-group-icon {
+    color: @bg_e;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    background: transparent;
+    color: @bg2;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+    color: @bg_h;
+}
+
+/* =======================================
+   WIDGETS
+   ======================================= */
+
+/* Notification clear button */
+.widget-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 6px;
+    color: @bg_h;
+}
+
+.widget-title label {
+    font-size: 1.364rem;
+}
+
+.widget-title button {
+    font-family: 'Symbols Nerd Font Mono';
+    background: @fg2;
+    background-clip: padding-box;
+    border-radius: 6px;
+    padding: 4px 16px;
+    border: 2px solid @bg_h;
+    margin: 0 4px 4px 0;
+}
+
+.widget-title button:hover {
+    background: @fg;
+    box-shadow: 4px 4px 0 @bg_h;
+}
+
+.widget-title button:active {
+    background: @fg;
+}
+
+/* Music player */
+.widget-mpris {
+    background: @aqua-dim;
+    border-radius: 8px;
+    border: 2px solid @bg_h;
+    color: @fg2;
+
+    margin: 0;
+    padding: 0;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.widget-mpris-subtitle {
+    font-size: 1.1rem;
+}
+
+.widget-mpris-player {
+    padding: 6px;
+    margin: 6px;
+}
+
+.widget-mpris>box button {
+    color: @fg2;
+    font-size: 24px;
+
+    border-radius: 20px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+
+    opacity: 0.6;
+}
+
+.widget-mpris button {
+    color: @fg3;
+}
+
+.widget-mpris>box button:hover {
+    opacity: 1;
+}
+
+.widget-mpris-album-art {
+    border-radius: 8px;
+}
+
+.widget-mpris-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+picture.mpris-background {
+    opacity: 0;
+}
+
+/* Volume widget */
+.widget-volume {
+    background: @bg1;
+    color: @bg;
+    padding: 4px;
+    margin: 6px;
+    border-radius: 6px;
+}

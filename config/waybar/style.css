@@ -27,11 +27,11 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: @bg_s;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: @bg_h;
     border: none;
 }
 
@@ -69,229 +69,84 @@ button:hover {
     color: @fg;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-    padding: 0 0.75rem;
-    background-color: @bg_h;
-    color: @fg;
-}
-
-#pulseaudio {
-    padding: 0 1rem;
-}
-
 #window,
 #workspaces {
     margin: 0 4px;
 }
 
 .modules-left {
-    background-color: @blue;
-    background-clip: padding-box;
+    background-color: @bg_h;
 
     border: 2px solid @blue;
-    border-bottom: 6px solid @blue;
     border-radius: 0.5rem;
+
+    margin: 0 6px 6px 0;
+    box-shadow: 6px 6px 0 @bg_h;
+}
+
+.modules-left widget:last-child * {
+    padding-right: 0.75rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.modules-left widget:first-child * {
+    border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .modules-center {
-    background-color: @orange;
-    background-clip: padding-box;
+    background-color: @bg_h;
 
     border: 2px solid @orange;
-    border-bottom: 6px solid @orange;
-
     border-radius: 0.5rem;
-}
 
-.modules-center widget {
-    background-color: @bg_h;
-    border-radius: 0.5rem;
+    margin: 0 6px 6px 0;
+    box-shadow: 6px 6px 0 @bg_h;
 }
 
 .modules-right {
-    background-color: @aqua;
-    background-clip: padding-box;
+    background-color: @bg_h;
 
     border: 2px solid @aqua;
-    border-bottom: 6px solid @aqua;
     border-radius: 0.5rem;
 
+    margin: 0 6px 6px 0;
+    box-shadow: 6px 6px 0 @bg_h;
 }
 
-.modules-right widget {
-    background-color: transparent;
-}
-
-#clock,
-#custom-brightness,
-#pulseaudio,
-#custom-lunis {
+.modules-right widget * {
+    color: @fg1;
     background-color: @bg_h;
     padding: 0 1rem;
 }
 
-
-#clock:hover,
-#custom-brightness:hover,
-#pulseaudio:hover,
-#custom-lunis:hover {
+.modules-right widget *:hover {
     color: @yellow;
+}
+
+.modules-right widget:first-child * {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.modules-right widget:last-child * {
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding-right: 1.5rem;
 }
 
 #custom-separator {
     background-color: @bg_h;
     color: @bg2;
-}
-
-#custom-brightness {
-    border-radius: 0.5rem 0 0 0.5rem;
-}
-
-#custom-lunis {
-    border-radius: 0 0.5rem 0.5rem 0;
-}
-
-label:focus {
-    background-color: #000000;
+    padding: 0;
+    margin: 0;
 }
 
 #network {
-    color: #90b1b1;
+    color: @blue;
 }
 
 #network.disconnected {
-    background-color: #ff9090;
-}
-
-#pulseaudio {
-    color: @fg;
+    background-color: @red;
 }
 
 #pulseaudio.muted {
     color: @red;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
-}
-
-#tray>.passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state>label {
-    padding: 0 5px;
-}
-
-#keyboard-state>label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-    background-color: transparent;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: @fg;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
-}
-
-#cpu {
-    border-radius: 0.5rem 0 0 0.5rem;
-}
-
-#custom-nordvpn {
-    border-radius: 0 0.5rem 0.5rem 0;
-    background-color: @bg_h;
-    padding-right: 0.75rem;
 }
