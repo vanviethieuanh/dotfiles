@@ -19,5 +19,5 @@ My dotfiles
 </p>
 
 <p align="center">
-<img alt="2026-01-04-171943_hyprshot" src="./assets/4.webp" />
+<img alt="2026-01-04-171943_hyprshot" src="./assets/1.webp" />
 </p>
