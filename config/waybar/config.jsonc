@@ -9,6 +9,7 @@
         "memory",
         "custom/separator",
         "network",
+        "custom/separator",
         "custom/nordvpn"
     ],
     "modules-center": [

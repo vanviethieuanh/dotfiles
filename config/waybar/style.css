@@ -82,15 +82,24 @@ button:hover {
 
     margin: 0 6px 6px 0;
     box-shadow: 6px 6px 0 @bg_h;
+
+}
+
+
+.modules-left widget * {
+    color: @fg1;
+    background-color: @bg_h;
+    padding: 0 1rem;
 }
 
 .modules-left widget:last-child * {
-    padding-right: 0.75rem;
+    padding-right: 1rem;
     border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .modules-left widget:first-child * {
     border-radius: 0.5rem 0 0 0.5rem;
+    padding-left: 1rem;
 }
 
 .modules-center {
