@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "margin-left": 20,
-    "margin-right": 20,
-    "margin-top": 5,
+    "margin-left": 14,
+    "margin-right": 14,
+    "margin-top": 14,
     "modules-left": [
         "cpu",
         "custom/separator",
