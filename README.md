@@ -11,3 +11,13 @@ My dotfiles
 <p align="center">
 <img alt="2026-01-04-171943_hyprshot" src="./assets/2.webp" />
 </p>
+
+## v1
+
+<p align="center">
+<img alt="2026-01-04-171943_hyprshot" src="./assets/3.webp" />
+</p>
+
+<p align="center">
+<img alt="2026-01-04-171943_hyprshot" src="./assets/4.webp" />
+</p>
