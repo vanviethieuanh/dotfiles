@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -16,9 +17,20 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+
+nvm() {
+  unset -f nvm node npm npx pnpm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
+
+node() { nvm node "$@"; }
+npm()  { nvm npm  "$@"; }
+npx()  { nvm npx  "$@"; }
+pnpm()  { nvm pnpm "$@"; }
+
 export JAVA_HOME=/usr/lib/jvm/default
 
 alias p="python"
@@ -63,3 +75,5 @@ fi
 #       [ -f "$GCP_PATH" ] && source "$GCP_PATH"
 #     fi
 # fi
+
+zprof
