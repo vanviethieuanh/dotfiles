@@ -29,16 +29,20 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ============================================================================
 export NVM_DIR="$HOME/.nvm"
 
-nvm() {
+_load_nvm() {
   unset -f nvm node npm npx pnpm
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+}
+
+nvm() {
+  _load_nvm
   nvm "$@"
 }
 
-node() { nvm node "$@"; }
-npm()  { nvm npm  "$@"; }
-npx()  { nvm npx  "$@"; }
-pnpm() { nvm pnpm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm()  { _load_nvm; npm "$@"; }
+npx()  { _load_nvm; npx "$@"; }
+pnpm() { _load_nvm; pnpm "$@"; }
 
 # ============================================================================
 # Environment Variables
