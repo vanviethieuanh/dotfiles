@@ -1,4 +1,3 @@
-zmodload zsh/zprof
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -68,12 +67,3 @@ if [[ "$(uname)" == "Linux" ]]; then
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
     source /etc/profile.d/google-cloud-cli.sh
 fi
-
-# if [[ "$(uname)" == "Darwin" ]]; then
-#     if command -v brew >/dev/null; then
-#       GCP_PATH="$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-#       [ -f "$GCP_PATH" ] && source "$GCP_PATH"
-#     fi
-# fi
-
-zprof
