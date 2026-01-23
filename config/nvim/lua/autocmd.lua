@@ -20,3 +20,16 @@ vim.cmd [[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]]
 vim.cmd [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
 vim.cmd [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
 vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
+
+vim.filetype.add {
+  extension = {
+    templ = 'templ',
+  },
+}
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'templ',
+  callback = function()
+    vim.treesitter.start()
+  end,
+})

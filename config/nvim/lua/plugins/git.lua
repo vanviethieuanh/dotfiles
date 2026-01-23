@@ -1,21 +1,18 @@
 return {
-  -- NOTE: Base: git wrapper
   {
     'tpope/vim-fugitive',
-
-    config = function()
-      vim.keymap.set('n', '<leader>ha', ':Git add %<CR>', { desc = 'Git [a]dd current buffer' })
-      vim.keymap.set('n', '<leader>hA', ':Git add .<CR>', { desc = 'Git add [A]ll' })
-      vim.keymap.set('n', '<leader>hc', ':Git commit<CR>', { desc = 'Git [c]ommit' })
-      vim.keymap.set('n', '<leader>hP', ':Git push<CR>', { desc = 'Git [P]ush' })
-    end,
+    cmd = { 'Git', 'G', 'Gdiffsplit', 'Gvdiffsplit', 'Gwrite', 'Gread' },
+    keys = {
+      { '<leader>ha', ':Git add %<CR>', desc = 'Git [a]dd current buffer' },
+      { '<leader>hA', ':Git add .<CR>', desc = 'Git add [A]ll' },
+      { '<leader>hc', ':Git commit<CR>', desc = 'Git [c]ommit' },
+      { '<leader>hP', ':Git push<CR>', desc = 'Git [P]ush' },
+    },
   },
 
-  -- NOTE: Git graph
-  -- It required to install wezterm with glyphs, see commit:
-  -- https://github.com/wezterm/wezterm/pull/6873
   {
     'isakbm/gitgraph.nvim',
+    cmd = { 'GitGraph' },
     opts = {
       symbols = {
         merge_commit = '',

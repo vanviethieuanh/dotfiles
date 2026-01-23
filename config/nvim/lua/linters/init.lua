@@ -1,15 +1,20 @@
 local M = {}
 
 function M.setup()
-  -- Order matters only if linters share filetypes
-  local linters = {
+  local linter_modules = {
     'linters.markdown',
   }
 
-  for _, linter in ipairs(linters) do
-    local ok, mod = pcall(require, linter)
-    if ok and type(mod.setup) == 'function' then
-      mod.setup()
+  for _, module_name in ipairs(linter_modules) do
+    local ok, mod = pcall(require, module_name)
+    if ok then
+      if type(mod.setup) == 'function' then
+        mod.setup()
+      else
+        vim.notify(("Linter module '%s' has no setup()"):format(module_name), vim.log.levels.WARN)
+      end
+    else
+      vim.notify(("Failed to load linter module '%s'"):format(module_name), vim.log.levels.ERROR)
     end
   end
 end

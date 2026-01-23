@@ -1,9 +1,9 @@
 require('lazy').setup {
-  'mbbill/undotree',
-  'dstein64/vim-startuptime',
-  'arthurxavierx/vim-caser',
-  'hashivim/vim-terraform',
-  'nvim-pack/nvim-spectre',
+  { 'mbbill/undotree', cmd = 'UndotreeToggle' },
+  { 'dstein64/vim-startuptime', cmd = 'StartupTime' },
+  { 'arthurxavierx/vim-caser', keys = { 'gsp', 'gsc', 'gsm', 'gss', 'gsu', 'gst', 'gsK' } },
+  { 'hashivim/vim-terraform', ft = { 'terraform', 'tf', 'hcl' } },
+  { 'nvim-pack/nvim-spectre', cmd = { 'Spectre' }, keys = { { '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', desc = 'Toggle Spectre' } } },
 
   require 'lsp-config', -- MAIN LSP config plugin
 
