@@ -93,3 +93,10 @@ tasks:
     cmds:
       - swaync-client -R
       - swaync-client -rs
+
+  speed-test-nvim:
+    cmds:
+      - rm /tmp/startuptime.log
+      - nvim --startuptime /tmp/startuptime.log ~/Repositories/unitd +qa
+      - cat /tmp/startuptime.log
+

@@ -40,8 +40,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias l="ls"
 alias pn="git add . && git commit -m 'update $(date)' && git push"
-alias task="go-task"
-
 
 export PNPM_HOME="/home/accodius/.local/share/pnpm"
 case ":$PATH:" in
@@ -63,6 +61,8 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 export PATH=$PATH:$(go env GOPATH)/bin
 
 if [[ "$(uname)" == "Linux" ]]; then
+    alias task="go-task"
+
     export PATH="$HOME/miniconda3/bin:$PATH"
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
     source /etc/profile.d/google-cloud-cli.sh
