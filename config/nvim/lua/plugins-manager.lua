@@ -15,9 +15,7 @@ require('lazy').setup {
   require 'plugins.blinks', -- Autocompletion
   require 'plugins.color-scheme', -- Color Scheme
   require 'plugins.conform', -- Formatter
-  -- require 'plugins.dashboard-nvim', -- Greeting screen
   require 'plugins.git', -- Git related configurations
-  --  require 'plugins.harpoon',
   require 'plugins.indent-line',
   require 'plugins.lazy-dev', -- LSP for NeoVim Config
   require 'plugins.lint', -- Linter
