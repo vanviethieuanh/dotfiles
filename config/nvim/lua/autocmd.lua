@@ -14,16 +14,20 @@ vim.api.nvim_create_autocmd('FileType', {
 
 vim.o.title = true
 
--- NOTE: Terraform
-vim.cmd [[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]]
-vim.cmd [[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]]
-vim.cmd [[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]]
-vim.cmd [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
-vim.cmd [[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]]
-
 vim.filetype.add {
   extension = {
+    hcl = 'hcl',
+    tf = 'terraform',
+    tfvars = 'terraform',
+    tfstate = 'json',
     templ = 'templ',
+  },
+  filename = {
+    ['.terraformrc'] = 'hcl',
+    ['terraform.rc'] = 'hcl',
+  },
+  pattern = {
+    ['.*%.tfstate%.backup'] = 'json',
   },
 }
 
