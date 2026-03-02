@@ -12,6 +12,20 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  group = vim.api.nvim_create_augroup('systemd_ftdetect', { clear = true }),
+  desc = 'Set filetype for systemd unit files',
+  pattern = {
+    '*.service',
+    '*.mount',
+    '*.socket',
+    '*.timer',
+  },
+  callback = function()
+    vim.cmd 'set filetype=systemd'
+  end,
+})
+
 vim.o.title = true
 
 -- NOTE: Terraform
