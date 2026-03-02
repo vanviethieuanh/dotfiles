@@ -9,6 +9,7 @@ function M.setup()
   -- Safely extend args
   local ml = lint.linters.markdownlint
   if not ml then
+    vim.notify('markdownlint linter not found', vim.log.levels.WARN)
     return
   end
 

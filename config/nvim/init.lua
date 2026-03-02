@@ -17,7 +17,13 @@ require 'autocmd'
 -- It's required to setup plugins commands under this require.
 require 'plugins-manager'
 
-require('linters').setup()
-require('nvim-highlight-colors').turnOn()
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.schedule(function()
+      require('linters').setup()
+      require('nvim-highlight-colors').turnOn()
+    end)
+  end,
+})
 
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'

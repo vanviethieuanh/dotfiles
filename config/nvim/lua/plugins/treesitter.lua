@@ -1,9 +1,9 @@
 return {
-  { -- Highlight, edit, and navigate code
+  {
     'nvim-treesitter/nvim-treesitter',
+    event = { 'BufReadPost', 'BufNewFile' },
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+    main = 'nvim-treesitter.configs',
     opts = {
       ensure_installed = {
         'bash',
@@ -23,8 +23,7 @@ return {
         'vimdoc',
         'yaml',
       },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
+      auto_install = false,
       highlight = {
         enable = true,
       },
@@ -43,5 +42,5 @@ return {
 
     vim.treesitter.language.register('templ', 'templ')
   end,
-  'nvim-treesitter/playground',
+  { 'nvim-treesitter/playground', cmd = 'TSPlaygroundToggle' },
 }

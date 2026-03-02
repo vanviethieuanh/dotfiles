@@ -76,9 +76,6 @@ vim.opt.confirm = true
 
 vim.opt.signcolumn = 'yes'
 
--- Register the language
-require 'lsp.templ'
-
 vim.opt.termguicolors = true
 
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })

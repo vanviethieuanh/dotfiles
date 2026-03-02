@@ -1,7 +1,6 @@
--- NOTE: Session manager
 return {
   'rmagatti/auto-session',
-  lazy = false,
+  event = 'VeryLazy',
   config = function()
     local auto_session = require 'auto-session'
 
