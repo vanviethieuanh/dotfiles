@@ -65,9 +65,11 @@ export PATH="$PATH:$HOME/go/bin"
 alias p="python"
 alias c="clear"
 alias g="git"
+
 alias v="nvim"
 alias vim="nvim"
 alias vi="nvim"
+
 alias l="ls"
 alias x="exit"
 alias pn="git add . && git commit -m 'update $(date)' && git push"
@@ -85,4 +87,5 @@ if [[ "$(uname)" == "Linux" ]]; then
     source /etc/profile.d/google-cloud-cli.sh
 
     eval "$(atuin init zsh)"
+    eval "$(zoxide init zsh)"
 fi
