@@ -83,4 +83,6 @@ if [[ "$(uname)" == "Linux" ]]; then
     export PATH="$HOME/miniconda3/bin:$PATH"
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
     source /etc/profile.d/google-cloud-cli.sh
+
+    eval "$(atuin init zsh)"
 fi

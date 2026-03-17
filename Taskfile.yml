@@ -99,4 +99,3 @@ tasks:
       - rm /tmp/startuptime.log
       - nvim --startuptime /tmp/startuptime.log ~/Repositories/unitd +qa
       - cat /tmp/startuptime.log
-
