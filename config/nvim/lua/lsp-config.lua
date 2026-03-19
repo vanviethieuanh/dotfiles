@@ -230,6 +230,12 @@ return {
           on_dir(vim.fn.getcwd())
         end,
       },
+      zuban = {
+        name = 'ZubanLS',
+        cmd = { 'zuban', 'server' },
+        root_markers = { 'pyproject.toml', '.git' },
+        filetypes = { 'python' },
+      },
     }
 
     -- LSP servers to exclude from Mason's automatic_enable
