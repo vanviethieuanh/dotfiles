@@ -104,6 +104,7 @@ if [[ "$(uname)" == "Linux" ]]; then
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
     source /etc/profile.d/google-cloud-cli.sh
 
-    eval "$(atuin init zsh)"
     eval "$(zoxide init zsh)"
 fi
+
+eval "$(atuin init zsh)"
