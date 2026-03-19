@@ -21,6 +21,18 @@ vim.filetype.add {
     tfvars = 'terraform',
     tfstate = 'json',
     templ = 'templ',
+
+    service = 'systemd',
+    socket = 'systemd',
+    timer = 'systemd',
+    mount = 'systemd',
+    automount = 'systemd',
+    swap = 'systemd',
+    target = 'systemd',
+    path = 'systemd',
+    slice = 'systemd',
+    scope = 'systemd',
+    device = 'systemd',
   },
   filename = {
     ['.terraformrc'] = 'hcl',

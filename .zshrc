@@ -44,6 +44,20 @@ npm()  { _load_nvm; npm "$@"; }
 npx()  { _load_nvm; npx "$@"; }
 pnpm() { _load_nvm; pnpm "$@"; }
 
+# --- rbenv lazy loader ---
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+_rbenv_lazy_init() {
+  unset -f ruby gem bundle jekyll rbenv
+  eval "$(rbenv init - zsh)"
+}
+
+ruby()   { _rbenv_lazy_init; command ruby "$@" }
+gem()    { _rbenv_lazy_init; command gem "$@" }
+bundle() { _rbenv_lazy_init; command bundle "$@" }
+jekyll() { _rbenv_lazy_init; command jekyll "$@" }
+rbenv()  { _rbenv_lazy_init; command rbenv "$@" }
+
 # ============================================================================
 # Environment Variables
 # ============================================================================

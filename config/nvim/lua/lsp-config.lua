@@ -224,6 +224,12 @@ return {
         },
       },
       gdscript = {},
+      systemd_lsp = {
+        filetypes = { 'systemd' },
+        root_dir = function(_, on_dir)
+          on_dir(vim.fn.getcwd())
+        end,
+      },
     }
 
     -- LSP servers to exclude from Mason's automatic_enable
