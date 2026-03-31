@@ -99,6 +99,10 @@ alias zsh-profile="zsh -i -c zprof"
 # ============================================================================
 if [[ "$(uname)" == "Linux" ]]; then
     alias task="go-task"
+    open() {
+      nohup nautilus --new-window "${1:-.}" >/dev/null 2>&1 &
+      disown
+    }
 
     export PATH="$HOME/miniconda3/bin:$PATH"
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
