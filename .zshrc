@@ -65,6 +65,7 @@ export JAVA_HOME=/usr/lib/jvm/default
 export PNPM_HOME="/home/accodius/.local/share/pnpm"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+export MAKEFLAGS="-j$(nproc)"
 
 # ============================================================================
 # PATH Configuration
