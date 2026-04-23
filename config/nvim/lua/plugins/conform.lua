@@ -38,6 +38,7 @@ return { -- Autoformat
       javascript = { 'prettier' },
       javascriptreact = { 'prettier' },
       json = { 'prettier' },
+      markdown = { 'prettier' },
     },
   },
 }
