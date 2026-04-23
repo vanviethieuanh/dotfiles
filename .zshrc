@@ -65,6 +65,7 @@ export JAVA_HOME=/usr/lib/jvm/default
 export PNPM_HOME="/home/accodius/.local/share/pnpm"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+export MAKEFLAGS="-j$(nproc)"
 
 # ============================================================================
 # PATH Configuration
@@ -99,6 +100,10 @@ alias zsh-profile="zsh -i -c zprof"
 # ============================================================================
 if [[ "$(uname)" == "Linux" ]]; then
     alias task="go-task"
+    open() {
+      nohup nautilus --new-window "${1:-.}" >/dev/null 2>&1 &
+      disown
+    }
 
     export PATH="$HOME/miniconda3/bin:$PATH"
     source "$HOME/miniconda3/etc/profile.d/conda.sh"
