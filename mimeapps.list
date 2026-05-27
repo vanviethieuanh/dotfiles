@@ -1,5 +1,5 @@
 [Added Associations]
-application/pdf=firefox.desktop;
+application/pdf=firefox.desktop;zen.desktop;
 text/html=nvim.desktop;zen.desktop;firefox.desktop;
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 x-scheme-handler/http=zen.desktop;firefox.desktop;
@@ -29,9 +29,10 @@ application/x-extension-shtml=zen.desktop;firefox.desktop;
 application/xhtml+xml=zen.desktop;firefox.desktop;
 application/x-extension-xhtml=zen.desktop;firefox.desktop;
 application/x-extension-xht=zen.desktop;firefox.desktop;
+audio/mpeg=org.gnome.Decibels.desktop;
 
 [Default Applications]
-application/pdf=firefox.desktop;
+application/pdf=zen.desktop
 text/html=zen.desktop
 x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
 x-scheme-handler/etcher=balenaEtcher.desktop
@@ -62,3 +63,4 @@ application/x-extension-shtml=zen.desktop
 application/xhtml+xml=zen.desktop
 application/x-extension-xhtml=zen.desktop
 application/x-extension-xht=zen.desktop
+audio/mpeg=org.gnome.Decibels.desktop
