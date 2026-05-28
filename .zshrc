@@ -115,4 +115,8 @@ if [[ "$(uname)" == "Linux" ]]; then
     eval "$(zoxide init zsh)"
 fi
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias spf="spf -c $(realpath ~)/.config/superfile/config.toml"
+fi
+
 eval "$(atuin init zsh)"
