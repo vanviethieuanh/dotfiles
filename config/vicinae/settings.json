@@ -1,8 +1,9 @@
 {
-    "$schema": "https://vicinae.com/schemas/config.json",
-    "theme": {
-        "dark": {
-            "name": "gruvbox-dark"
-        }
+  "$schema": "https://vicinae.com/schemas/config.json",
+  "theme": {
+    "dark": {
+      "name": "gruvbox-dark"
     }
+  }
 }
+

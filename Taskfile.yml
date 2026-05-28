@@ -33,6 +33,7 @@ tasks:
     cmds:
       - sudo pacman -S --needed {{.PACMAN}}
       - yay -S --needed --noconfirm --removemake {{.YAY}}
+      - systemctl --user enable --now vicinae.service
 
   link-wallpaper:
     internal: true
