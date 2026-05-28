@@ -25,7 +25,10 @@ return {
     {
       '<leader>o',
       function()
-        Snacks.picker.files()
+        Snacks.picker.files {
+          ignored = false,
+          hidden = true,
+        }
       end,
       desc = 'Buffers',
     },
