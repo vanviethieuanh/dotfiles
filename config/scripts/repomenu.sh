@@ -12,10 +12,10 @@ CHOSEN=$(
 [ -z "$CHOSEN" ] && exit 1
 
 if [ "$CHOSEN" = "#" ]; then
-  wezterm start
+  foot
   exit 0
 fi
 
 TARGET="$REPO_DIR/$CHOSEN"
 
-wezterm start --cwd "$TARGET" -- nvim
+foot -D "$TARGET" -- nvim
