@@ -18,4 +18,4 @@ fi
 
 TARGET="$REPO_DIR/$CHOSEN"
 
-foot -D "$TARGET" -- nvim
+foot -D "$TARGET"
