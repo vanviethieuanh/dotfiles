@@ -1,5 +1,6 @@
 # VARS
-export EDITOR="nvim"
+export EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
 
 # Enable Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -123,3 +124,6 @@ eval "$(atuin init zsh)"
 
 # Added by Hugging Face CLI installer
 export PATH="/home/accodius/.local/bin:$PATH"
+
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/home/accodius/.lmstudio/bin"
