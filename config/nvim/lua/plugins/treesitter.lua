@@ -22,7 +22,6 @@ return {
         'vim',
         'vimdoc',
         'yaml',
-        'wgsl-bevy',
       },
       auto_install = false,
       highlight = {

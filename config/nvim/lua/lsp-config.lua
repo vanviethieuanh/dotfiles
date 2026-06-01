@@ -230,11 +230,18 @@ return {
           on_dir(vim.fn.getcwd())
         end,
       },
-      zuban = {
-        name = 'ZubanLS',
-        cmd = { 'zuban', 'server' },
+      basedpyright = {
+        cmd = { 'basedpyright-langserver', '--stdio' },
         root_markers = { 'pyproject.toml', '.git' },
         filetypes = { 'python' },
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = 'standard',
+              autoImportCompletions = true,
+            },
+          },
+        },
       },
     }
 
