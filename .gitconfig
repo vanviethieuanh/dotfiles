@@ -19,3 +19,14 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[delta]
+	dark = true
+	syntax-theme = gruvbox-dark
+	line-numbers = true
+	side-by-side = true
+	hyperlinks = true
+	hyperlinks-file-link-format = "lazygit-edit://{path}:{line}"
+	minus-style = "syntax #2f2727"
+	minus-emph-style = "syntax #552727"
+	plus-style = "syntax #2f342f"
+    plus-emph-style = "syntax #2f4f36"
