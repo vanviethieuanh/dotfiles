@@ -109,8 +109,6 @@ if [[ "$(uname)" == "Linux" ]]; then
       disown
     }
 
-    export PATH="$HOME/miniconda3/bin:$PATH"
-    source "$HOME/miniconda3/etc/profile.d/conda.sh"
     source /etc/profile.d/google-cloud-cli.sh
 
     eval "$(zoxide init zsh)"

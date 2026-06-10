@@ -1,0 +1,6 @@
+git:
+  pagers:
+    - pager: delta --paging=never --side-by-side --line-numbers
+      colorArg: always
+
+    - externalDiffCommand: difft --color=always --display=side-by-side
