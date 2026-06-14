@@ -1,3 +1,5 @@
 *.log
 config/btop/themes
 config/yazi/flavors
+config/tmux/plugins
+.gitconfig
