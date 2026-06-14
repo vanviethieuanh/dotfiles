@@ -81,7 +81,7 @@ ignore_missing_fields = false
 
 #-- File Panel Extra Columns Count
 # Count of extra columns in file panel in addition to file name. When option equal 0 then feature is disabled.
-file_panel_extra_columns = 0
+file_panel_extra_columns = 3
 
 #-- File name width in File Panel
 # Percentage of file panel width allocated to file names (25-100). Higher values give more space to names, less to extra columns.
@@ -123,7 +123,7 @@ file_preview_width = 0
 #-- File Preview Border
 # Enable border around the file preview panel for better visual separation.
 # Default: false (no border)
-enable_file_preview_border = false
+enable_file_preview_border = true
 
 #-- Sidebar Width
 # If you don't want to display the sidebar, you can input 0 directly.
@@ -154,7 +154,7 @@ border_middle_right = '┤'
 
 #-- Detailed Metadata
 # Requires: exiftool
-metadata = false
+metadata = true
 
 #-- MD5 Checksum Generation
 # Requires: md5sum
@@ -162,7 +162,7 @@ enable_md5_checksum = false
 #
 #-- Zoxide Support - Smart directory navigation!
 # Requires: zoxide
-zoxide_support = false
+zoxide_support = true
 
 #-- File opening rules
 # Map file extensions to commands used to open them.
