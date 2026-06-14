@@ -23,10 +23,13 @@ local mappings = {
       ':set filetype=',
       { desc = 'Prompt to select file [T]ype' },
     },
-    { '<C-h>', '<C-w><C-h>', { desc = 'Move to left window' } },
-    { '<C-l>', '<C-w><C-l>', { desc = 'Move to right window' } },
-    { '<C-j>', '<C-w><C-j>', { desc = 'Move to lower window' } },
-    { '<C-k>', '<C-w><C-k>', { desc = 'Move to upper window' } },
+
+    -- Window rearrangement
+    { '<C-S-h>', '<C-w>H', { desc = 'Move window to far left' } },
+    { '<C-S-j>', '<C-w>J', { desc = 'Move window to far bottom' } },
+    { '<C-S-k>', '<C-w>K', { desc = 'Move window to far top' } },
+    { '<C-S-l>', '<C-w>L', { desc = 'Move window to far right' } },
+
     { 'n', 'nzzzv' },
     { 'N', 'Nzzzv' },
     { '<leader>a', 'ggVG' },
