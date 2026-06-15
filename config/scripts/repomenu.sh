@@ -11,7 +11,11 @@ CHOSEN=$(
 [ -z "$CHOSEN" ] && exit 1
 
 if [ "$CHOSEN" = "#" ]; then
-  foot
+  if tmux has-session -t "home" 2>/dev/null; then
+    foot tmux attach-session -t "home"
+  else
+    foot tmux new-session -A -s "home"
+  fi
   exit 0
 fi
 
