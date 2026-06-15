@@ -1,6 +1,10 @@
+gui:
+  nerdFontsVersion: "3"
+  expandFocusedSidePanel: true
+os:
+  editPreset: "nvim"
 git:
   pagers:
-    - pager: delta --paging=never --side-by-side --line-numbers
+    - pager: delta --paging=never
       colorArg: always
-
     - externalDiffCommand: difft --color=always --display=side-by-side
