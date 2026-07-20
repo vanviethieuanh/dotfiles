@@ -94,8 +94,9 @@
         "max-length": 10
     },
     "custom/lunis": {
-        "tooltip": false,
-        "exec": "/home/accodius/.cargo/bin/lunis now -l vi -f '{y-s} {y-b} - {m-S} - {d-s} {d-b} ngày {d-n}'",
+        "tooltip": true,
+        "return-type": "json",
+        "exec": "/home/accodius/.cargo/bin/lunis judge --born '2001-11-17T03:15:00+07:00' -o waybar -l vi -f '{y-s} {y-b} ({y-y},{y-w})'",
         "interval": 60
     },
     "custom/powermenu": {
@@ -121,5 +122,5 @@
         "interval": "once",
         "tooltip": false,
         "on-click": "swaync-client -op"
-    },
+    }
 }

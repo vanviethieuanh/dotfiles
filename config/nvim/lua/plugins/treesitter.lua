@@ -9,6 +9,7 @@ return {
 
       require('nvim-treesitter').install {
         'bash',
+        'c',
         'diff',
         'javascript',
         'lua',
@@ -20,6 +21,7 @@ return {
         'rust',
         'templ',
         'terraform',
+        'tsx',
         'typescript',
         'vim',
         'vimdoc',

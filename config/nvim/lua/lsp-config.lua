@@ -223,6 +223,7 @@ return {
           },
         },
       },
+      clangd = {},
       gdscript = {},
       systemd_lsp = {
         filetypes = { 'systemd' },
@@ -235,7 +236,8 @@ return {
         root_markers = { 'pyproject.toml', '.git' },
         filetypes = { 'python' },
         settings = {
-          basedpyright = {
+      ts_ls = {},
+      basedpyright = {
             analysis = {
               typeCheckingMode = 'standard',
               autoImportCompletions = true,
@@ -250,7 +252,9 @@ return {
     -- Tools to install (formatters, linters, LSPs)
     local ensure_installed_tools = {
       'stylua',
+      'clangd',
       'lua-language-server',
+      'typescript-language-server',
     }
 
     -- Setup mason-tool-installer to install all needed tools
