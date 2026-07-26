@@ -1,15 +1,15 @@
-local color_scheme = 'sainnhe/gruvbox-material'
+local color_scheme = 'neanias/everforest-nvim'
 
 return {
   color_scheme,
+  version = false,
   lazy = false,
   priority = 1000,
   config = function()
-    -- Optionally configure and load the colorscheme
-    -- directly inside the plugin declaration.
-    --
-    vim.g.gruvbox_material_background = 'hard'
+    require('everforest').setup({
+      background = 'hard',
+    })
 
-    vim.cmd.colorscheme 'gruvbox-material'
+    vim.cmd.colorscheme 'everforest'
   end,
 }

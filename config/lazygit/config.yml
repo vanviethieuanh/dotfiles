@@ -2,6 +2,26 @@ gui:
   nerdFontsVersion: "3"
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 2
+  theme:
+    activeBorderColor:
+      - "#dbbc7f"
+      - bold
+    inactiveBorderColor:
+      - "#495156"
+    selectedLineBgColor:
+      - "#2e383c"
+    optionsTextColor:
+      - "#7fbbb3"
+    cherryPickedCommitFgColor:
+      - "#a7c080"
+    cherryPickedCommitBgColor:
+      - "#272e33"
+    unstagedChangesColor:
+      - "#e67e80"
+    defaultFgColor:
+      - "#d3c6aa"
+    searchingActiveBorderColor:
+      - "#dbbc7f"
 os:
   editPreset: "nvim"
 git:
