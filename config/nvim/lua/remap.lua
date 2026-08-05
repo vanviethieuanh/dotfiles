@@ -45,12 +45,12 @@ local mappings = {
     {
       '<leader>e',
       function()
-        if vim.fn.bufname() ~= '' then
+        if vim.fn.bufname() ~= '' and vim.bo.buftype == '' then
           -- Open Neo-tree in the current window, revealing current file
           vim.cmd 'Neotree reveal current'
         else
           -- Fallback: toggle sidebar (default)
-          vim.cmd 'Neotree toggle'
+          vim.cmd 'Neotree toggle position=right'
         end
       end,
       { desc = 'Open file [E]xplorer' },

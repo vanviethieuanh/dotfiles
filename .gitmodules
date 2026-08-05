@@ -1,0 +1,6 @@
+[submodule "config/everforest-gtk-theme"]
+	path = config/everforest-gtk-theme
+	url = https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme
+[submodule "config/everforest_collection"]
+	path = config/everforest_collection
+	url = https://github.com/neuromaancer/everforest_collection.git

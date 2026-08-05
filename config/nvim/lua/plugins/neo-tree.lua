@@ -3,9 +3,6 @@ return {
   branch = 'v3.x',
 
   cmd = 'Neotree', -- load only when command is used
-  keys = {
-    { '<leader>e', '<cmd>Neotree toggle<cr>', desc = 'Explorer' },
-  },
 
   dependencies = {
     'nvim-lua/plenary.nvim',

@@ -233,11 +233,10 @@ return {
       },
       basedpyright = {
         cmd = { 'basedpyright-langserver', '--stdio' },
-        root_markers = { 'pyproject.toml', '.git' },
+        root_markers = { '.git' },
         filetypes = { 'python' },
         settings = {
-      ts_ls = {},
-      basedpyright = {
+          basedpyright = {
             analysis = {
               typeCheckingMode = 'standard',
               autoImportCompletions = true,
