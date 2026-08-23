@@ -1,0 +1,39 @@
+theme = Gruvbox Dark Hard
+
+# Drop every default keybind; tmux owns the terminal.
+keybind = clear
+
+# Native Ghostty actions
+keybind = super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
+keybind = super+==increase_font_size:1
+keybind = super+-=decrease_font_size:1
+keybind = super+0=reset_font_size
+keybind = super+,=open_config
+keybind = super+shift+,=reload_config
+keybind = super+shift+q=quit
+
+# Forwarded to tmux (\x13 = C-s prefix)
+keybind = super+t=text:\x13c
+keybind = super+n=text:\x13C
+keybind = super+q=text:\x13Q
+keybind = super+w=text:\x13x
+keybind = super+shift+w=text:\x13&
+keybind = super+enter=text:\x13z
+keybind = super+d=text:\x13|
+keybind = super+shift+d=text:\x13-
+keybind = super+[=text:\x13p
+keybind = super+]=text:\x13n
+keybind = super+1=text:\x131
+keybind = super+2=text:\x132
+keybind = super+3=text:\x133
+keybind = super+4=text:\x134
+keybind = super+5=text:\x135
+keybind = super+6=text:\x136
+keybind = super+7=text:\x137
+keybind = super+8=text:\x138
+keybind = super+9=text:\x139
+keybind = super+alt+left=text:\x13h
+keybind = super+alt+down=text:\x13j
+keybind = super+alt+up=text:\x13k
+keybind = super+alt+right=text:\x13l

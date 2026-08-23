@@ -2,6 +2,7 @@
 
 REPO_DIR="$HOME/Repositories"
 CHOSEN="$1"
+[ -z "$CHOSEN" ] && exit 0
 
 TARGET="$REPO_DIR/$CHOSEN"
 SESSION_NAME="[repo] $CHOSEN"
