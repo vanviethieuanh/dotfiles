@@ -1,0 +1,49 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "zhangqian": {
+        "title": "Zhang Qian",
+        "description": "Zhang Qian central log",
+        "regex": {
+            "zhangqian": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(?<level>DEBUG|INFO|WARNING|ERROR|CRITICAL)\\s+pid=(?<pid>\\d+)\\s+\\[(?<chain>[^\\]]+)\\]\\s+(?<body>.*)$"
+            }
+        },
+        "timestamp-format": [
+            "%Y-%m-%d %H:%M:%S.%L"
+        ],
+        "value": {
+            "pid": {
+                "kind": "integer",
+                "description": "Process ID"
+            },
+            "chain": {
+                "kind": "string",
+                "description": "Dotted command chain"
+            }
+        },
+        "highlights": {
+            "translate": {
+                "pattern": "zhangqian\\.subtitle\\.translate\\.db",
+                "color": "#83c092"
+            },
+            "ocr": {
+                "pattern": "zhangqian\\.subtitle\\.ocr",
+                "color": "#7fbbb3"
+            },
+            "error-token": {
+                "pattern": "Exception|Traceback",
+                "color": "#e67e80"
+            }
+        },
+        "sample": [
+            {
+                "line": "2026-08-16 16:25:38.027 INFO    pid=471680 [zhangqian.subtitle.vad]   Matched 12432/13489 subtitle(s) to a speech segment",
+                "level": "info"
+            },
+            {
+                "line": "2026-08-16 16:25:39.193 WARNING pid=471680 [zhangqian.subtitle.vad]   Something to warn about",
+                "level": "warning"
+            }
+        ]
+    }
+}

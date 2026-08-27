@@ -80,7 +80,7 @@ case ":$PATH:" in
 esac
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.go/bin"
 
 # ============================================================================
 # Aliases
