@@ -125,3 +125,6 @@ export PATH="/home/accodius/.local/bin:$PATH"
 
 # Added by LM Studio CLI tool (lms)
 export PATH="$PATH:/home/accodius/.lmstudio/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
