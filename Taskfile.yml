@@ -49,6 +49,7 @@ tasks:
           - .gitconfig
           - .p10k.zsh
           - .zshrc
+          - .zshenv
         cmd: ln -sf "$(realpath {{.ITEM}})" "$(realpath ~)/{{.ITEM}}"
 
   link-config-d:

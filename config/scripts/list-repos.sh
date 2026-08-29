@@ -12,6 +12,7 @@ if ! command -v rg >/dev/null 2>&1; then
     exit 0
 fi
 
+echo '#'
 rg --files --hidden --no-messages --no-ignore -g '**/.git/HEAD' --max-depth "$MAX_DEPTH" "$REPO_DIR" |
     sed "s|^$REPO_DIR/||; s|/\.git/HEAD$||" |
     sort
