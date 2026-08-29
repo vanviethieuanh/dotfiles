@@ -30,6 +30,9 @@ return {
         --  Most Language Servers support renaming across files, etc.
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
 
+        -- Show documentation for the symbol under your cursor.
+        map('K', vim.lsp.buf.hover, 'Hover Documentation')
+
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
         map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
@@ -224,7 +227,11 @@ return {
         },
       },
       clangd = {},
-      gdscript = {},
+      gdscript = {
+        cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(os.getenv 'GDScript_Port' or '6005')),
+        filetypes = { 'gdscript' },
+        root_markers = { 'project.godot', '.git' },
+      },
       systemd_lsp = {
         filetypes = { 'systemd' },
         root_dir = function(_, on_dir)
