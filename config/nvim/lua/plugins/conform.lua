@@ -38,6 +38,15 @@ return { -- Autoformat
       javascriptreact = { 'prettier' },
       json = { 'prettier' },
       markdown = { 'prettier' },
+      templ = { 'templ' },
+    },
+    formatters = {
+      templ = {
+        cwd = function(_, ctx)
+          return vim.fs.root(ctx.dirname, 'go.mod')
+        end,
+        require_cwd = true,
+      },
     },
   },
 }
